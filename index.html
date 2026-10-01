@@ -1,0 +1,3811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagadeeswar Medidaraju — Cybersecurity | Ethical Hacking | Digital Forensics</title>
+<meta name="description" content="Portfolio of Jagadeeswar Medidaraju (DJ / Deeeejayy) — Cybersecurity practitioner specializing in Offensive Security, Penetration Testing, Digital Forensics, and Security Engineering.">
+<meta name="keywords" content="Jagadeeswar Medidaraju, Deeeejayy, Cybersecurity, Ethical Hacking, Penetration Testing, Digital Forensics, Security Engineering, CPENT">
+<meta property="og:title" content="Jagadeeswar Medidaraju — Cybersecurity Portfolio">
+<meta property="og:description" content="Cybersecurity practitioner specializing in Offensive Security, Penetration Testing, Digital Forensics, and Security Engineering.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<style>
+:root {
+  --bg-primary: #060810;
+  --bg-secondary: #0a0d18;
+  --bg-card: #0d1120;
+  --bg-card-hover: #111628;
+  --bg-glass: rgba(13,17,32,0.7);
+  --border: rgba(99,179,237,0.1);
+  --border-hover: rgba(99,179,237,0.25);
+  --cyan: #38bdf8;
+  --cyan-dim: rgba(56,189,248,0.15);
+  --cyan-glow: rgba(56,189,248,0.08);
+  --blue: #3b82f6;
+  --blue-dim: rgba(59,130,246,0.15);
+  --red: #f43f5e;
+  --red-dim: rgba(244,63,94,0.15);
+  --green: #22c55e;
+  --green-dim: rgba(34,197,94,0.12);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245,158,11,0.12);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-mono: #7dd3fc;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(56,189,248,0.2); color: var(--cyan); }
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ========= SCROLLBAR ========= */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: rgba(56,189,248,0.2); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(56,189,248,0.4); }
+
+/* ========= NOISE OVERLAY ========= */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ========= GRID OVERLAY ========= */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56,189,248,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========= SECTION BASE ========= */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ========= TYPOGRAPHY ========= */
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 600; line-height: 1.3; }
+h4 { font-size: 1.05rem; font-weight: 600; }
+p { line-height: 1.75; color: var(--text-secondary); }
+
+.mono { font-family: var(--font-mono); }
+.text-cyan { color: var(--cyan); }
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+
+/* ========= SECTION HEADER ========= */
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-id {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--cyan);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-id::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+}
+
+.section-title {
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ========= CARDS ========= */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.card-glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+/* ========= STATUS BADGES ========= */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.badge-completed {
+  color: var(--green);
+  background: var(--green-dim);
+  border: 1px solid rgba(34,197,94,0.2);
+}
+.badge-completed::before { background: var(--green); }
+
+.badge-current {
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(56,189,248,0.2);
+  animation: pulse-badge 2s infinite;
+}
+.badge-current::before { background: var(--cyan); animation: pulse-dot 2s infinite; }
+
+.badge-inprogress {
+  color: var(--amber);
+  background: var(--amber-dim);
+  border: 1px solid rgba(245,158,11,0.2);
+}
+.badge-inprogress::before { background: var(--amber); }
+
+.badge-planned {
+  color: var(--text-muted);
+  background: rgba(100,116,139,0.1);
+  border: 1px solid rgba(100,116,139,0.2);
+}
+.badge-planned::before { background: var(--text-muted); }
+
+.badge-experimental {
+  color: var(--red);
+  background: var(--red-dim);
+  border: 1px solid rgba(244,63,94,0.2);
+}
+.badge-experimental::before { background: var(--red); }
+
+@keyframes pulse-badge { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
+@keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+
+/* ========= BUTTONS ========= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: var(--bg-primary);
+}
+.btn-primary:hover {
+  background: #7dd3fc;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(56,189,248,0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cyan);
+  padding: 8px 0;
+  gap: 6px;
+}
+.btn-ghost:hover { gap: 10px; }
+.btn-ghost::after { content: '→'; transition: transform var(--transition); }
+
+/* ========= NAVIGATION ========= */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: all var(--transition);
+  padding: 20px 0;
+}
+
+#navbar.scrolled {
+  background: rgba(6,8,16,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 1px;
+}
+
+.nav-logo-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.nav-logo-alias {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all var(--transition);
+  letter-spacing: 0.01em;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.nav-links a.active { color: var(--cyan); }
+
+.nav-cta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--cyan);
+  border: 1px solid rgba(56,189,248,0.3);
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.nav-cta:hover {
+  background: var(--cyan-dim);
+  border-color: var(--cyan);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.nav-mobile-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-secondary);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(6,8,16,0.97);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-mobile-menu.open { display: flex; }
+
+.nav-mobile-menu a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  transition: all var(--transition);
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+}
+
+.nav-mobile-menu a:hover { color: var(--cyan); background: var(--cyan-glow); }
+
+.nav-mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+/* ========= HERO ========= */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.06;
+}
+
+.hero-glow-1 {
+  background: var(--cyan);
+  top: -100px;
+  right: -100px;
+}
+
+.hero-glow-2 {
+  background: var(--blue);
+  bottom: -150px;
+  left: -100px;
+  opacity: 0.04;
+}
+
+.hero-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.3), transparent);
+  animation: scan 8s linear infinite;
+  top: 0;
+}
+
+@keyframes scan { 0% { top: 0; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 140px 32px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.hero-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse-dot 2.5s infinite;
+}
+
+.hero-id {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--cyan);
+  letter-spacing: 0.15em;
+  border: 1px solid rgba(56,189,248,0.2);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.hero-name {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hero-alias {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--cyan);
+  letter-spacing: 0.15em;
+  margin-bottom: 32px;
+  display: block;
+}
+
+.hero-domains {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.hero-domain {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: var(--bg-card);
+  transition: all var(--transition);
+}
+
+.hero-domain:hover {
+  color: var(--cyan);
+  border-color: rgba(56,189,248,0.3);
+  background: var(--cyan-dim);
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.75;
+  margin-bottom: 48px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 64px;
+}
+
+.hero-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+  letter-spacing: 0.05em;
+}
+
+.hero-link:hover { color: var(--cyan); }
+
+.hero-link-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.hero-stat {}
+.hero-stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ========= ABOUT ========= */
+#about {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-story { display: flex; flex-direction: column; gap: 28px; }
+
+.about-block {}
+.about-block-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.about-block p { font-size: 0.95rem; line-height: 1.8; }
+
+.about-sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+.about-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+
+.about-tag:hover {
+  color: var(--cyan);
+  border-color: rgba(56,189,248,0.3);
+}
+
+.approach-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.approach-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.approach-step:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.approach-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.approach-step-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.approach-arrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  padding: 4px 0 4px 40px;
+}
+
+/* ========= PROFESSIONAL PROFILE ========= */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.profile-card {
+  padding: 28px;
+}
+
+.profile-card-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-card-title::before {
+  content: '';
+  width: 3px;
+  height: 14px;
+  background: var(--cyan);
+  border-radius: 2px;
+}
+
+.profile-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-list li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(99,179,237,0.05);
+}
+
+.profile-list li::before {
+  content: '›';
+  color: var(--cyan);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.methodology-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.method-step {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+
+.method-step:hover { color: var(--cyan); border-color: rgba(56,189,248,0.3); }
+
+.method-arrow {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+/* ========= EDUCATION ========= */
+.edu-card {
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--cyan), var(--blue));
+  border-radius: 0 2px 2px 0;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.edu-degree { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.edu-institution { font-size: 0.9rem; color: var(--text-secondary); }
+.edu-meta { text-align: right; }
+.edu-period { font-family: var(--font-mono); font-size: 0.72rem; color: var(--cyan); margin-bottom: 6px; }
+.edu-cgpa {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(56,189,248,0.2);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.edu-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.edu-subject {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* ========= CERTIFICATIONS ========= */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.cert-card {
+  padding: 24px;
+  position: relative;
+}
+
+.cert-issuer {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.cert-name { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.cert-full { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 14px; }
+
+.cert-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.cert-date { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
+
+.platforms-section { margin-top: 56px; }
+.platforms-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.platform-card {
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.platform-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--cyan-dim);
+  border: 1px solid rgba(56,189,248,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.platform-name { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.platform-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* ========= EXPERIENCE ========= */
+.timeline { position: relative; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--cyan), transparent);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timeline-dot {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.timeline-dot-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cyan);
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.2);
+  position: relative;
+  z-index: 1;
+  margin-top: 5px;
+}
+
+.timeline-content { }
+
+.timeline-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.timeline-org {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.timeline-role { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+
+.timeline-period {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.timeline-body { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+
+.timeline-responsibilities {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.timeline-responsibility {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.timeline-responsibility::before {
+  content: '›';
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.timeline-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+/* ========= PROJECTS ========= */
+#projects { background: var(--bg-secondary); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  padding: 28px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.project-card:hover::before { opacity: 1; }
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.project-category {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.project-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  transition: color var(--transition);
+}
+
+.project-card:hover .project-name { color: var(--cyan); }
+
+.project-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.project-tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+  text-decoration: none;
+  transition: opacity var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.project-link:hover { opacity: 0.7; }
+
+/* PROJECT MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(6,8,16,0.92);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+.modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-lg);
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  position: relative;
+  animation: modal-in 0.3s cubic-bezier(0.4,0,0.2,1);
+  margin: auto;
+}
+
+@keyframes modal-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.modal-close:hover { color: var(--text-primary); }
+
+.modal-category { font-family: var(--font-mono); font-size: 0.65rem; color: var(--cyan); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+.modal-title { font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin-bottom: 20px; }
+
+.modal-section { margin-bottom: 28px; }
+.modal-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-section p { font-size: 0.9rem; line-height: 1.75; }
+
+.modal-tech { display: flex; flex-wrap: wrap; gap: 8px; }
+.modal-tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.modal-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.modal-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--cyan);
+  text-decoration: none;
+  border: 1px solid rgba(56,189,248,0.25);
+  padding: 7px 14px;
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+.modal-link:hover { background: var(--cyan-dim); }
+
+/* ========= SKILLS ========= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.skill-group {
+  padding: 24px;
+}
+
+.skill-group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-group-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.skill-group-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding: 4px 0;
+}
+
+.skill-item::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--cyan);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* ========= TOOLS ========= */
+#tools { background: var(--bg-secondary); }
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tool-group { padding: 24px; }
+
+.tool-group-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-group-title::before {
+  content: '';
+  width: 3px;
+  height: 10px;
+  background: var(--cyan);
+  border-radius: 2px;
+}
+
+.tool-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tool-item {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: all var(--transition);
+  cursor: default;
+}
+
+.tool-item:hover {
+  color: var(--cyan);
+  border-color: rgba(56,189,248,0.3);
+  background: var(--cyan-glow);
+}
+
+/* ========= CTF ========= */
+.ctf-platforms {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 56px;
+}
+
+.ctf-platform-card { padding: 28px; }
+.ctf-platform-name { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.ctf-platform-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
+
+.ctf-achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ctf-achievement {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.ctf-achievement::before {
+  content: '◆';
+  font-size: 0.5rem;
+  color: var(--cyan);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.writeups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.writeup-card {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.writeup-platform-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.writeup-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); }
+.writeup-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+.writeup-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.writeup-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.writeup-link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+  text-decoration: none;
+  margin-top: auto;
+  transition: opacity var(--transition);
+}
+.writeup-link:hover { opacity: 0.7; }
+
+/* ========= LEADERSHIP ========= */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.leadership-card { padding: 28px; }
+
+.leadership-role {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.leadership-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+.leadership-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 14px; }
+
+.leadership-items { display: flex; flex-direction: column; gap: 6px; }
+.leadership-item {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 8px;
+}
+.leadership-item::before { content: '›'; color: var(--cyan); flex-shrink: 0; }
+
+/* ========= ACHIEVEMENTS ========= */
+#achievements { background: var(--bg-secondary); }
+
+.achievements-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px;
+}
+
+.achievement-card {
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.achievement-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--cyan-dim);
+  border: 1px solid rgba(56,189,248,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.achievement-content {}
+.achievement-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 5px; }
+.achievement-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ========= RESEARCH ========= */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.research-card {
+  padding: 24px;
+}
+
+.research-type {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.research-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+.research-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+
+.research-link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity var(--transition);
+}
+.research-link:hover { opacity: 0.7; }
+
+/* ========= CURRENT WORK ========= */
+.current-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.current-card { padding: 26px; }
+
+.current-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.current-card-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+.current-card-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
+
+/* ========= ROADMAP ========= */
+#roadmap { background: var(--bg-secondary); }
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.roadmap-item { padding: 22px; }
+
+.roadmap-area { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+.roadmap-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; }
+
+/* ========= PHILOSOPHY ========= */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.philosophy-card { padding: 28px; }
+
+.philosophy-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+.philosophy-text { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.75; }
+
+.philosophy-tagline {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cyan);
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 48px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ========= ONLINE PRESENCE ========= */
+#online { background: var(--bg-secondary); }
+
+.presence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.presence-card { padding: 28px; }
+
+.presence-platform {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.presence-handle { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.presence-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 16px; }
+
+.presence-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cyan);
+  text-decoration: none;
+  border: 1px solid rgba(56,189,248,0.25);
+  padding: 6px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition);
+}
+.presence-link:hover { background: var(--cyan-dim); }
+
+/* ========= CONTACT ========= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.contact-item:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--cyan-dim);
+  border: 1px solid rgba(56,189,248,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  color: var(--cyan);
+}
+
+.contact-item-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact-item-value {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.contact-cta {
+  padding: 36px;
+}
+
+.contact-cta-title { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+.contact-cta-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; }
+
+/* ========= APPENDIX ========= */
+#appendix { background: var(--bg-secondary); }
+
+.accordion { display: flex; flex-direction: column; gap: 8px; }
+
+.accordion-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.accordion-item:hover { border-color: var(--border-hover); }
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--transition);
+}
+
+.accordion-header:hover { background: var(--bg-card-hover); }
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.accordion-id {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--cyan);
+  width: 32px;
+}
+
+.accordion-chevron {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: transform var(--transition);
+}
+
+.accordion-item.open .accordion-chevron { transform: rotate(180deg); }
+
+.accordion-body {
+  display: none;
+  padding: 0 24px 24px;
+}
+
+.accordion-item.open .accordion-body { display: block; }
+
+/* ========= FOOTER ========= */
+footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border);
+  padding: 48px 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.footer-brand {}
+.footer-name { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+.footer-alias { font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.1em; margin-bottom: 8px; }
+.footer-tagline { font-size: 0.8rem; color: var(--text-muted); }
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+  letter-spacing: 0.05em;
+}
+
+.footer-link:hover { color: var(--cyan); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.footer-credit {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.footer-credit span { color: var(--cyan); }
+
+/* ========= UTILITIES ========= */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.flex-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.divider { height: 1px; background: var(--border); margin: 32px 0; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+
+/* ========= SCROLL REVEAL ========= */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 900px) {
+  section { padding: 72px 0; }
+  .container, .container-narrow { padding: 0 20px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .profile-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .leadership-grid { grid-template-columns: 1fr; }
+  .philosophy-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .hero-stats { gap: 28px; }
+  .edu-header { flex-direction: column; }
+  .edu-meta { text-align: left; }
+  .timeline::before { left: 12px; }
+  .timeline-item { grid-template-columns: 40px 1fr; }
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+  .hero-inner { padding: 120px 20px 80px; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .ctf-platforms { grid-template-columns: 1fr; }
+  .writeups-grid { grid-template-columns: 1fr; }
+  .current-grid { grid-template-columns: 1fr; }
+  .roadmap-grid { grid-template-columns: 1fr; }
+  .presence-grid { grid-template-columns: 1fr; }
+  .achievements-list { grid-template-columns: 1fr; }
+  .research-grid { grid-template-columns: 1fr; }
+  .modal { padding: 24px 20px; }
+  .timeline-item { grid-template-columns: 32px 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .hero-scan-line { display: none; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+
+<body>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Back to top">
+      <span class="nav-logo-name">Jagadeeswar Medidaraju</span>
+      <span class="nav-logo-alias">DJ · DEEEEJAYY</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#ctf">CTF</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#current">Now</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact</a>
+    <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <button class="nav-mobile-close" aria-label="Close menu" id="menuClose">✕</button>
+  <a href="#about" class="mobile-nav-link">About</a>
+  <a href="#profile" class="mobile-nav-link">Profile</a>
+  <a href="#education" class="mobile-nav-link">Education</a>
+  <a href="#experience" class="mobile-nav-link">Experience</a>
+  <a href="#projects" class="mobile-nav-link">Projects</a>
+  <a href="#skills" class="mobile-nav-link">Skills</a>
+  <a href="#ctf" class="mobile-nav-link">CTF</a>
+  <a href="#leadership" class="mobile-nav-link">Leadership</a>
+  <a href="#achievements" class="mobile-nav-link">Achievements</a>
+  <a href="#current" class="mobile-nav-link">Current Work</a>
+  <a href="#contact" class="mobile-nav-link">Contact</a>
+</div>
+
+<!-- ======================== HERO ======================== -->
+<section id="hero" aria-labelledby="hero-name">
+  <div class="hero-bg">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-scan-line" aria-hidden="true"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-meta reveal">
+      <div class="hero-id">SEC-01 · IDENTITY</div>
+      <div class="hero-status">
+        <div class="hero-status-dot" aria-hidden="true"></div>
+        Available for opportunities
+      </div>
+    </div>
+    <h1 id="hero-name">
+      <span class="hero-name reveal">Jagadeeswar<br>Medidaraju</span>
+    </h1>
+    <span class="hero-alias reveal reveal-delay-1">DJ &nbsp;/&nbsp; DEEEEJAYY</span>
+    <div class="hero-domains reveal reveal-delay-2" role="list">
+      <span class="hero-domain" role="listitem">Cybersecurity</span>
+      <span class="hero-domain" role="listitem">Ethical Hacking</span>
+      <span class="hero-domain" role="listitem">Digital Forensics</span>
+      <span class="hero-domain" role="listitem">Security Engineering</span>
+      <span class="hero-domain" role="listitem">Penetration Testing</span>
+    </div>
+    <p class="hero-bio reveal reveal-delay-3">
+      Cybersecurity practitioner and B.Tech student specializing in Cyber Forensics &amp; Information Security. I learn by building, breaking, investigating, and documenting — combining security theory with hands-on practice through CTFs, labs, open-source tooling, and real-world internships.
+    </p>
+    <div class="hero-actions reveal reveal-delay-4">
+      <a href="#projects" class="btn btn-primary">Explore Projects</a>
+      <a href="#about" class="btn btn-outline">About Me</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-links reveal reveal-delay-4">
+      <a href="https://github.com/DeeeeJayy" target="_blank" rel="noopener noreferrer" class="hero-link" aria-label="GitHub profile">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <span class="hero-link-divider" aria-hidden="true"></span>
+      <a href="https://linkedin.com/in/jagadeeswar-m" target="_blank" rel="noopener noreferrer" class="hero-link" aria-label="LinkedIn profile">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <span class="hero-link-divider" aria-hidden="true"></span>
+      <a href="https://tryhackme.com/p/Deeeejayy" target="_blank" rel="noopener noreferrer" class="hero-link" aria-label="TryHackMe profile">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm0 3a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+        TryHackMe
+      </a>
+      <span class="hero-link-divider" aria-hidden="true"></span>
+      <a href="https://medium.com/@deeeejayy" target="_blank" rel="noopener noreferrer" class="hero-link" aria-label="Medium blog">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        Medium
+      </a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hero-stat">
+        <div class="hero-stat-value">C|PENT</div>
+        <div class="hero-stat-label">Certified</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">8+</div>
+        <div class="hero-stat-label">Projects Built</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">2</div>
+        <div class="hero-stat-label">Internships</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">26</div>
+        <div class="hero-stat-label">OTW Bandit Levels</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ABOUT ======================== -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">02 · ABOUT</div>
+      <h2 class="section-title" id="about-title">Who I Am</h2>
+      <p class="section-subtitle">A cybersecurity practitioner who learns by doing — building tools, breaking systems, investigating problems, and documenting what matters.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-story">
+        <div class="about-block reveal">
+          <div class="about-block-label">Origin</div>
+          <p>I am Jagadeeswar Medidaraju — also known as DJ / Deeeejayy. I am a cybersecurity-focused individual with a strong interest in understanding technology, systems, and security from both practical and technical perspectives. I enjoy exploring how systems work, identifying weaknesses, investigating problems, and continuously developing my understanding through hands-on work.</p>
+        </div>
+        <div class="about-block reveal reveal-delay-1">
+          <div class="about-block-label">What Got Me Here</div>
+          <p>My interest in cybersecurity grew from curiosity about how systems can be explored, tested, and secured. What initially attracted me was the investigative nature of the field — taking a system, understanding how it works, finding where assumptions can fail, and figuring out what is happening behind the scenes. Over time, that curiosity developed into a deeper interest in penetration testing, digital investigation, web security, reverse engineering, and security research.</p>
+        </div>
+        <div class="about-block reveal reveal-delay-2">
+          <div class="about-block-label">Current Stage</div>
+          <p>I am currently developing myself as a cybersecurity professional while building practical knowledge and experience. My focus is on strengthening my technical foundation, gaining hands-on exposure, and working on meaningful security problems — gradually developing deeper expertise rather than specializing too narrowly too early.</p>
+        </div>
+        <div class="about-block reveal reveal-delay-3">
+          <div class="about-block-label">Tagline</div>
+          <p style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--cyan);">Survive whatever means Necessary ( Learn || Copy || Steal )</p>
+        </div>
+      </div>
+      <div class="about-sidebar">
+        <div class="card reveal">
+          <div class="about-block-label" style="margin-bottom:14px;">Interests</div>
+          <div class="about-tag-cloud" role="list">
+            <span class="about-tag" role="listitem">Penetration Testing</span>
+            <span class="about-tag" role="listitem">Web Security</span>
+            <span class="about-tag" role="listitem">Bug Bounty</span>
+            <span class="about-tag" role="listitem">Digital Forensics</span>
+            <span class="about-tag" role="listitem">Reverse Engineering</span>
+            <span class="about-tag" role="listitem">Malware Analysis</span>
+            <span class="about-tag" role="listitem">OSINT</span>
+            <span class="about-tag" role="listitem">CTFs</span>
+            <span class="about-tag" role="listitem">Security Research</span>
+            <span class="about-tag" role="listitem">Linux &amp; Automation</span>
+            <span class="about-tag" role="listitem">Tool Development</span>
+          </div>
+        </div>
+        <div class="card reveal reveal-delay-1">
+          <div class="about-block-label" style="margin-bottom:14px;">How I Approach Security</div>
+          <div class="approach-flow">
+            <div class="approach-step"><span class="approach-step-num">01</span><span class="approach-step-text">Understand the system</span></div>
+            <div class="approach-step"><span class="approach-step-num">02</span><span class="approach-step-text">Investigate thoroughly</span></div>
+            <div class="approach-step"><span class="approach-step-num">03</span><span class="approach-step-text">Experiment practically</span></div>
+            <div class="approach-step"><span class="approach-step-num">04</span><span class="approach-step-text">Test different approaches</span></div>
+            <div class="approach-step"><span class="approach-step-num">05</span><span class="approach-step-text">Document findings</span></div>
+            <div class="approach-step"><span class="approach-step-num">06</span><span class="approach-step-text">Continuously improve</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PROFESSIONAL PROFILE ======================== -->
+<section id="profile" aria-labelledby="profile-title" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">03 · PROFESSIONAL PROFILE</div>
+      <h2 class="section-title" id="profile-title">Technical Identity</h2>
+      <p class="section-subtitle">Cybersecurity domains, specializations, technical strengths, and the assessment methodology I work within.</p>
+    </div>
+    <div class="profile-grid">
+      <div class="card profile-card reveal">
+        <div class="profile-card-title">Cybersecurity Domains</div>
+        <ul class="profile-list" role="list">
+          <li>Offensive Security</li>
+          <li>Penetration Testing</li>
+          <li>Web Application Security</li>
+          <li>Vulnerability Assessment</li>
+          <li>Reconnaissance &amp; Enumeration</li>
+          <li>Digital Forensics</li>
+          <li>OSINT</li>
+          <li>Reverse Engineering</li>
+          <li>Malware Analysis</li>
+          <li>CTFs &amp; Security Challenges</li>
+          <li>Security Automation</li>
+          <li>Cybersecurity Tooling</li>
+        </ul>
+      </div>
+      <div class="card profile-card reveal reveal-delay-1">
+        <div class="profile-card-title">Technical Strengths</div>
+        <ul class="profile-list" role="list">
+          <li>Linux command-line environments</li>
+          <li>Reconnaissance and enumeration</li>
+          <li>Web security assessment</li>
+          <li>Vulnerability identification</li>
+          <li>Security tool usage and configuration</li>
+          <li>Technical investigation</li>
+          <li>CTF-style problem solving</li>
+          <li>Security-focused troubleshooting</li>
+          <li>Reading and understanding source code</li>
+          <li>Adapting and modifying existing scripts</li>
+          <li>Researching unfamiliar technologies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card reveal mt-24">
+      <div class="profile-card-title" style="margin-bottom:20px;">Security Assessment Methodology</div>
+      <div class="methodology-chain" role="list" aria-label="Assessment workflow">
+        <span class="method-step" role="listitem">Reconnaissance</span>
+        <span class="method-arrow" aria-hidden="true">→</span>
+        <span class="method-step" role="listitem">Enumeration</span>
+        <span class="method-arrow" aria-hidden="true">→</span>
+        <span class="method-step" role="listitem">Vulnerability Assessment</span>
+        <span class="method-arrow" aria-hidden="true">→</span>
+        <span class="method-step" role="listitem">Exploitation</span>
+        <span class="method-arrow" aria-hidden="true">→</span>
+        <span class="method-step" role="listitem">Post-Exploitation</span>
+        <span class="method-arrow" aria-hidden="true">→</span>
+        <span class="method-step" role="listitem">Analysis</span>
+        <span class="method-arrow" aria-hidden="true">→</span>
+        <span class="method-step" role="listitem">Documentation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== EDUCATION ======================== -->
+<section id="education" aria-labelledby="edu-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">04 · EDUCATION</div>
+      <h2 class="section-title" id="edu-title">Academic Foundation</h2>
+    </div>
+    <div class="card edu-card reveal">
+      <div class="edu-header">
+        <div>
+          <div class="edu-degree">Bachelor of Technology</div>
+          <div class="edu-degree" style="font-size:1rem;color:var(--cyan);font-weight:600;">Cyber Forensics &amp; Information Security</div>
+          <div class="edu-institution">Dr. M.G.R. Educational and Research Institute</div>
+        </div>
+        <div class="edu-meta">
+          <div class="edu-period">2023 – 2027</div>
+          <div class="edu-cgpa">CGPA: 8.6 / 10</div>
+          <div style="margin-top:8px;"><span class="badge badge-current">Currently Pursuing</span></div>
+        </div>
+      </div>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.75;margin-bottom:16px;">Undergraduate education focused on Cyber Forensics &amp; Information Security, providing an academic foundation in cybersecurity, computer systems, networking, digital investigation, and information security. Academic learning is supplemented with practical cybersecurity work through online platforms, security laboratories, technical challenges, and independent study.</p>
+      <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Academic Focus Areas</div>
+      <div class="edu-subjects" role="list">
+        <span class="edu-subject" role="listitem">Cyber Forensics</span>
+        <span class="edu-subject" role="listitem">Information Security</span>
+        <span class="edu-subject" role="listitem">Computer Networks</span>
+        <span class="edu-subject" role="listitem">Operating Systems</span>
+        <span class="edu-subject" role="listitem">Digital Investigation</span>
+        <span class="edu-subject" role="listitem">Network Security</span>
+        <span class="edu-subject" role="listitem">Cryptography</span>
+        <span class="edu-subject" role="listitem">Cybercrime</span>
+        <span class="edu-subject" role="listitem">Computer Systems</span>
+        <span class="edu-subject" role="listitem">Security Fundamentals</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CERTIFICATIONS ======================== -->
+<section id="certifications" aria-labelledby="cert-title" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">05 · CERTIFICATIONS &amp; LEARNING</div>
+      <h2 class="section-title" id="cert-title">Credentials &amp; Training</h2>
+      <p class="section-subtitle">Professional certifications, completed learning paths, and ongoing structured training.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="card cert-card reveal">
+        <div class="cert-issuer">EC-Council</div>
+        <div class="cert-name">C|PENT</div>
+        <div class="cert-full">Certified Penetration Testing Professional</div>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;">A professional penetration-testing certification focused on practical offensive security and penetration-testing methodologies across different environments.</p>
+        <div class="cert-footer">
+          <span class="badge badge-completed">Certified</span>
+        </div>
+      </div>
+      <div class="card cert-card reveal reveal-delay-1">
+        <div class="cert-issuer">TryHackMe</div>
+        <div class="cert-name">Cyber Security 101</div>
+        <div class="cert-full">Foundational Cybersecurity Learning Path</div>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;">Completed the Cyber Security 101 learning path covering networking, Linux, Windows, cryptography, web security, exploitation fundamentals, offensive and defensive security, and security tooling through hands-on rooms.</p>
+        <div class="cert-footer">
+          <span class="cert-date">June 2026</span>
+          <span class="badge badge-completed">Completed</span>
+        </div>
+      </div>
+      <div class="card cert-card reveal reveal-delay-2">
+        <div class="cert-issuer">Simplilearn</div>
+        <div class="cert-name">Introduction to Cybercrime</div>
+        <div class="cert-full">Foundational Cybercrime &amp; Cyber Threat Concepts</div>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;">Foundational course covering concepts related to cybercrime, cyber threats, and the broader cybersecurity landscape.</p>
+        <div class="cert-footer">
+          <span class="cert-date">April 2026 · ID: 10123089</span>
+          <span class="badge badge-completed">Completed</span>
+        </div>
+      </div>
+      <div class="card cert-card reveal reveal-delay-3">
+        <div class="cert-issuer">Tata Consultancy Services · Forage</div>
+        <div class="cert-name">Cybersecurity Analyst</div>
+        <div class="cert-full">Cybersecurity Analyst Job Simulation</div>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;">A practical job simulation designed to provide exposure to cybersecurity analyst-oriented tasks and real-world scenarios.</p>
+        <div class="cert-footer">
+          <span class="cert-date">December 2025 · ID: ctgGMukJYCop42Crp</span>
+          <span class="badge badge-completed">Completed</span>
+        </div>
+      </div>
+      <div class="card cert-card reveal">
+        <div class="cert-issuer">TryHackMe</div>
+        <div class="cert-name">Junior Penetration Tester</div>
+        <div class="cert-full">Practical Penetration Testing Learning Path</div>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;">Currently progressing through the Junior Penetration Tester pathway, developing practical penetration-testing workflows across reconnaissance, enumeration, web security, exploitation, and privilege escalation.</p>
+        <div class="cert-footer">
+          <span class="badge badge-inprogress">In Progress</span>
+        </div>
+      </div>
+      <div class="card cert-card reveal reveal-delay-1">
+        <div class="cert-issuer">EC-Council</div>
+        <div class="cert-name">CEH</div>
+        <div class="cert-full">Certified Ethical Hacker — Preparation</div>
+        <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:14px;">Currently preparing for the CEH certification, strengthening knowledge across ethical hacking methodologies, reconnaissance, enumeration, vulnerability assessment, and web security.</p>
+        <div class="cert-footer">
+          <span class="badge badge-inprogress">Preparing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="platforms-section">
+      <div class="platforms-title">Practical Learning Platforms</div>
+      <div class="platforms-grid">
+        <div class="card platform-card reveal">
+          <div class="platform-icon">TH</div>
+          <div>
+            <div class="platform-name">TryHackMe</div>
+            <div class="platform-desc">Primary structured learning platform. Guided rooms, practical learning paths, and hands-on security challenges. Completed Cyber Security 101; progressing through Junior Penetration Tester.</div>
+          </div>
+        </div>
+        <div class="card platform-card reveal reveal-delay-1">
+          <div class="platform-icon">OW</div>
+          <div>
+            <div class="platform-name">OverTheWire</div>
+            <div class="platform-desc">Used to strengthen Linux, command-line, networking, SSH, and problem-solving fundamentals. Completed all 26 levels of Bandit. Journey documented through a technical writeup.</div>
+          </div>
+        </div>
+        <div class="card platform-card reveal reveal-delay-2">
+          <div class="platform-icon">HB</div>
+          <div>
+            <div class="platform-name">Hack The Box</div>
+            <div class="platform-desc">Practical security labs and challenge-based learning for offensive security skill development.</div>
+          </div>
+        </div>
+        <div class="card platform-card reveal reveal-delay-3">
+          <div class="platform-icon">PS</div>
+          <div>
+            <div class="platform-name">PortSwigger Web Academy</div>
+            <div class="platform-desc">Web application security labs and practical learning focused on OWASP vulnerabilities and Burp Suite workflows.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== EXPERIENCE ======================== -->
+<section id="experience" aria-labelledby="exp-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">06 · EXPERIENCE</div>
+      <h2 class="section-title" id="exp-title">Professional Experience</h2>
+      <p class="section-subtitle">Internships, leadership roles, and real-world cybersecurity work.</p>
+    </div>
+    <div class="timeline" role="list">
+
+      <!-- CyART -->
+      <div class="timeline-item reveal" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"><div class="timeline-dot-inner"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-org">CyART</div>
+              <div class="timeline-role">Cybersecurity Intern &amp; Team Lead</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+              <span class="timeline-period">Current</span>
+              <span class="badge badge-current">Active</span>
+            </div>
+          </div>
+          <div class="timeline-body">Working as a cybersecurity intern with additional responsibility for team and module-level coordination within the Dark-Web Intelligence project. Responsibilities combine technical contribution, integration review, coordination between development pods, and quality control of team outputs.</div>
+          <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Leadership Responsibilities</div>
+          <div class="timeline-responsibilities">
+            <div class="timeline-responsibility">Lead development activities within Module 2 of the Dark-Web Intelligence project</div>
+            <div class="timeline-responsibility">Coordinate work across multiple development pods and track dependencies</div>
+            <div class="timeline-responsibility">Review contributions and provide technical feedback before integration</div>
+            <div class="timeline-responsibility">Ensure individual components follow agreed data contracts and interfaces</div>
+            <div class="timeline-responsibility">Coordinate demonstrations, testing, commits, and branch-level submissions</div>
+            <div class="timeline-responsibility">Review work before integration into the protected main branch</div>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin:16px 0 8px;">Technical Contributions — Dark-Web Intelligence</div>
+          <div class="timeline-responsibilities">
+            <div class="timeline-responsibility">Crawler architecture, queueing, and scheduling concepts</div>
+            <div class="timeline-responsibility">Crawling and fetching workflows; crawl-result structures</div>
+            <div class="timeline-responsibility">URL-level deduplication and data-quality validation</div>
+            <div class="timeline-responsibility">Integration between crawling and downstream processing</div>
+            <div class="timeline-responsibility">Structured output, data contracts, and testing verification</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Dark-Web Intelligence</span>
+            <span class="timeline-tag">Module 2</span>
+            <span class="timeline-tag">Team Lead</span>
+            <span class="timeline-tag">Web Crawling</span>
+            <span class="timeline-tag">Data Pipeline</span>
+            <span class="timeline-tag">Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chennai Police -->
+      <div class="timeline-item reveal" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"><div class="timeline-dot-inner" style="background:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,0.2);"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-org">Greater Chennai Police Commissionerate</div>
+              <div class="timeline-role">Cyber Security Intern</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+              <span class="timeline-period">March 2025</span>
+              <span class="badge badge-completed">Completed</span>
+            </div>
+          </div>
+          <div class="timeline-body">Gained exposure to practical cybersecurity and cyber-forensic activities within a law-enforcement environment, applying cybersecurity and digital investigation concepts operationally.</div>
+          <div class="timeline-responsibilities">
+            <div class="timeline-responsibility">Cyber-forensic investigation processes and digital-evidence analysis</div>
+            <div class="timeline-responsibility">Cybersecurity investigation workflows and simulated penetration testing</div>
+            <div class="timeline-responsibility">Vulnerability assessment and incident-response concepts</div>
+            <div class="timeline-responsibility">Technical reporting in a law-enforcement context</div>
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Cyber Forensics</span>
+            <span class="timeline-tag">Digital Evidence</span>
+            <span class="timeline-tag">Penetration Testing</span>
+            <span class="timeline-tag">Incident Response</span>
+            <span class="timeline-tag">Law Enforcement</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PROJECTS ======================== -->
+<section id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">07 · PROJECTS</div>
+      <h2 class="section-title" id="projects-title">What I've Built</h2>
+      <p class="section-subtitle">Security tools, community platforms, and technical systems — each starting with a real problem worth solving.</p>
+    </div>
+    <div class="projects-grid">
+
+      <article class="card project-card reveal" onclick="openModal('proj-email')" role="button" tabindex="0" aria-label="View Email Header Investigation Tool details" onkeypress="if(event.key==='Enter')openModal('proj-email')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">Digital Forensics · Email Security</div>
+            <h3 class="project-name">Email Header Investigation Tool</h3>
+          </div>
+          <span class="badge badge-completed">Completed</span>
+        </div>
+        <p class="project-desc">A cybersecurity investigation platform that analyzes email headers and extracts structured information for security investigations — transforming raw headers into visual investigation workflows with SPF/DKIM/DMARC analysis, tracking detection, and graph-based visualization.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">Python</span>
+          <span class="project-tech-tag" role="listitem">Digital Forensics</span>
+          <span class="project-tech-tag" role="listitem">Email Security</span>
+          <span class="project-tech-tag" role="listitem">Graph Visualization</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/DeeeeJayy/email-header-investigator" target="_blank" rel="noopener noreferrer" class="project-link" onclick="event.stopPropagation()" aria-label="GitHub repository">↗ GitHub</a>
+          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);">v1.3.1</span>
+        </div>
+      </article>
+
+      <article class="card project-card reveal reveal-delay-1" onclick="openModal('proj-securescope')" role="button" tabindex="0" aria-label="View SecureScope details" onkeypress="if(event.key==='Enter')openModal('proj-securescope')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">Security Reconnaissance · CLI</div>
+            <h3 class="project-name">SecureScope</h3>
+          </div>
+          <span class="badge badge-completed">Completed</span>
+        </div>
+        <p class="project-desc">A command-line security reconnaissance and passive-assessment tool consolidating multiple security checks into structured workflows. Features modular scanner architecture with HTML/JSON/Markdown reports and predefined scanning profiles.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">Python</span>
+          <span class="project-tech-tag" role="listitem">CLI</span>
+          <span class="project-tech-tag" role="listitem">Reconnaissance</span>
+          <span class="project-tech-tag" role="listitem">Security Assessment</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/DeeeeJayy/securescope" target="_blank" rel="noopener noreferrer" class="project-link" onclick="event.stopPropagation()" aria-label="GitHub repository">↗ GitHub</a>
+        </div>
+      </article>
+
+      <article class="card project-card reveal reveal-delay-2" onclick="openModal('proj-ofa')" role="button" tabindex="0" aria-label="View ONE FOR ALL details" onkeypress="if(event.key==='Enter')openModal('proj-ofa')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">CTF Toolkit · CLI Utility</div>
+            <h3 class="project-name">ONE FOR ALL</h3>
+          </div>
+          <span class="badge badge-completed">Completed</span>
+        </div>
+        <p class="project-desc">An interactive CLI utility combining commonly required encoding, decoding, hashing, cryptographic, and text-transformation operations. Built to eliminate tool-switching during CTFs and security exercises. Features automatic transformation chains and interactive menus.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">Python</span>
+          <span class="project-tech-tag" role="listitem">CLI</span>
+          <span class="project-tech-tag" role="listitem">Cryptography</span>
+          <span class="project-tech-tag" role="listitem">CTF</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/DeeeeJayy/one_for_all" target="_blank" rel="noopener noreferrer" class="project-link" onclick="event.stopPropagation()" aria-label="GitHub repository">↗ GitHub</a>
+        </div>
+      </article>
+
+      <article class="card project-card reveal" onclick="openModal('proj-crawler')" role="button" tabindex="0" aria-label="View CyberSec Opportunity Crawler details" onkeypress="if(event.key==='Enter')openModal('proj-crawler')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">Intelligence · Crawler · Discord Bot</div>
+            <h3 class="project-name">CyberSec Opportunity Crawler</h3>
+          </div>
+          <span class="badge badge-current">Active Development</span>
+        </div>
+        <p class="project-desc">An opportunity-intelligence system integrated with the Nucleus ecosystem. Crawls 13+ sources for cybersecurity internships, jobs, CTFs, and hackathons. Normalized data flows into a SQLite database, exposed via the Neutron Discord bot and Nucleus web dashboard.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">Node.js</span>
+          <span class="project-tech-tag" role="listitem">JavaScript</span>
+          <span class="project-tech-tag" role="listitem">SQLite</span>
+          <span class="project-tech-tag" role="listitem">Discord API</span>
+          <span class="project-tech-tag" role="listitem">Express</span>
+          <span class="project-tech-tag" role="listitem">Docker</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);">13 sources · REST API · Auto-notify</span>
+        </div>
+      </article>
+
+      <article class="card project-card reveal reveal-delay-1" onclick="openModal('proj-nucleus')" role="button" tabindex="0" aria-label="View Nucleus details" onkeypress="if(event.key==='Enter')openModal('proj-nucleus')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">Community Platform</div>
+            <h3 class="project-name">Nucleus</h3>
+          </div>
+          <span class="badge badge-current">Active</span>
+        </div>
+        <p class="project-desc">A cybersecurity-focused community built around learning, practical experimentation, career opportunities, and collaborative security activities. Covers Bug Bounty, CTFs, Web Security, Red Team, Blue Team, Digital Forensics, OSINT, and more.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">Community</span>
+          <span class="project-tech-tag" role="listitem">Discord</span>
+          <span class="project-tech-tag" role="listitem">Cybersecurity</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://discord.gg/75gKG8PxkC" target="_blank" rel="noopener noreferrer" class="project-link" onclick="event.stopPropagation()" aria-label="Join Discord">↗ Discord Server</a>
+        </div>
+      </article>
+
+      <article class="card project-card reveal reveal-delay-2" onclick="openModal('proj-neutron')" role="button" tabindex="0" aria-label="View Neutron details" onkeypress="if(event.key==='Enter')openModal('proj-neutron')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">Discord Bot · Community Infrastructure</div>
+            <h3 class="project-name">Neutron</h3>
+          </div>
+          <span class="badge badge-current">Active Development</span>
+        </div>
+        <p class="project-desc">Custom Discord bot serving as the automation and interaction layer for the Nucleus cybersecurity community. Handles opportunity discovery, challenge systems, event management, and community automation. Integrates directly with the CyberSec Opportunity Crawler.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">Node.js</span>
+          <span class="project-tech-tag" role="listitem">Discord API</span>
+          <span class="project-tech-tag" role="listitem">SQLite</span>
+          <span class="project-tech-tag" role="listitem">REST API</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);">Opportunity discovery · Challenges · Automation</span>
+        </div>
+      </article>
+
+      <article class="card project-card reveal" onclick="openModal('proj-cryptclash')" role="button" tabindex="0" aria-label="View Crypt Clash details" onkeypress="if(event.key==='Enter')openModal('proj-cryptclash')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">CTF Platform · Event Infrastructure</div>
+            <h3 class="project-name">Crypt Clash</h3>
+          </div>
+          <span class="badge badge-current">Upcoming</span>
+        </div>
+        <p class="project-desc">A cybersecurity CTF platform designed and developed for TECHASTRA 2026, the college symposium. Responsible for the complete technical platform, backend architecture, team leadership, and event preparation. Combines software development, security, and event organization.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">CTF Platform</span>
+          <span class="project-tech-tag" role="listitem">Backend</span>
+          <span class="project-tech-tag" role="listitem">TECHASTRA 2026</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);">Platform Developer &amp; Technical Lead</span>
+        </div>
+      </article>
+
+      <article class="card project-card reveal reveal-delay-1" onclick="openModal('proj-arsenalx')" role="button" tabindex="0" aria-label="View ArsenalX details" onkeypress="if(event.key==='Enter')openModal('proj-arsenalx')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">Cybersecurity Utility · CLI</div>
+            <h3 class="project-name">ArsenalX</h3>
+          </div>
+          <span class="badge badge-experimental">Experimental</span>
+        </div>
+        <p class="project-desc">A cybersecurity-oriented command-line utility project exploring how commonly used security functionality can be organized into a centralized accessible workflow for security practitioners.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">CLI</span>
+          <span class="project-tech-tag" role="listitem">Security Utility</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/DeeeeJayy/arsenalx" target="_blank" rel="noopener noreferrer" class="project-link" onclick="event.stopPropagation()" aria-label="GitHub repository">↗ GitHub</a>
+        </div>
+      </article>
+
+      <article class="card project-card reveal reveal-delay-2" onclick="openModal('proj-cyberrakshak')" role="button" tabindex="0" aria-label="View CyberRakshak details" onkeypress="if(event.key==='Enter')openModal('proj-cyberrakshak')">
+        <div class="project-header">
+          <div>
+            <div class="project-category">Cybersecurity · Privacy · Awareness</div>
+            <h3 class="project-name">CyberRakshak</h3>
+          </div>
+          <span class="badge badge-planned">Concept / Dev</span>
+        </div>
+        <p class="project-desc">A cybersecurity concept exploring digital protection, privacy, cybersecurity awareness, and the security implications of handling personal and digital information. Areas include data protection, digital security, and Indian cyber-law considerations.</p>
+        <div class="project-tech" role="list">
+          <span class="project-tech-tag" role="listitem">Privacy</span>
+          <span class="project-tech-tag" role="listitem">Digital Security</span>
+          <span class="project-tech-tag" role="listitem">Awareness</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);">Evolving concept</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODALS -->
+<div id="proj-email" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Email Header Investigation Tool" onclick="if(event.target===this)closeModal('proj-email')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-email')" aria-label="Close">✕</button>
+    <div class="modal-category">Digital Forensics · Email Security · Investigation Platform</div>
+    <h2 class="modal-title">Email Header Investigation Tool</h2>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;"><span class="badge badge-completed">Completed</span><span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);padding:3px 0;">v1.3.1 · Actively Maintained</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>A cybersecurity investigation platform designed to analyze email headers and extract useful information for security investigations. Transforms complex email-header information into a structured and visual investigation workflow.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Problem</div><p>Email headers contain valuable information about origin, routing, authentication, and infrastructure. Raw headers are difficult to interpret manually, particularly when investigating suspicious messages. Analysts need a structured interface to accelerate investigation.</p></div>
+    <div class="modal-section">
+      <div class="modal-section-title">Features</div>
+      <div class="modal-tech">
+        <span class="modal-tech-tag">Header parsing</span><span class="modal-tech-tag">SPF analysis</span><span class="modal-tech-tag">DKIM analysis</span><span class="modal-tech-tag">DMARC analysis</span><span class="modal-tech-tag">Email routing visualization</span><span class="modal-tech-tag">Tracking-pixel detection</span><span class="modal-tech-tag">HTML email analysis</span><span class="modal-tech-tag">Investigation canvas</span><span class="modal-tech-tag">Graph-based visualization</span><span class="modal-tech-tag">GUI traceroute</span><span class="modal-tech-tag">Remote-resource analysis</span>
+      </div>
+    </div>
+    <div class="modal-section"><div class="modal-section-title">Development History</div><p><strong style="color:var(--text-primary);">v1.0</strong> — Initial parsing and investigation functionality.<br><strong style="color:var(--text-primary);">v1.1</strong> — Tracking-pixel detection, remote-resource analysis, HTML email analysis.<br><strong style="color:var(--text-primary);">v1.2</strong> — Visual investigation canvas and graph-based relationship visualization.<br><strong style="color:var(--text-primary);">v1.3</strong> — Major UI improvements and canvas refinements.<br><strong style="color:var(--text-primary);">v1.3.1</strong> — Stabilization and refinement.</p></div>
+    <div class="modal-links"><a href="https://github.com/DeeeeJayy/email-header-investigator" target="_blank" rel="noopener noreferrer" class="modal-link">↗ View on GitHub</a></div>
+  </div>
+</div>
+
+<div id="proj-securescope" class="modal-overlay" role="dialog" aria-modal="true" aria-label="SecureScope" onclick="if(event.target===this)closeModal('proj-securescope')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-securescope')" aria-label="Close">✕</button>
+    <div class="modal-category">Security Reconnaissance · Passive Assessment · CLI</div>
+    <h2 class="modal-title">SecureScope</h2>
+    <div style="margin-bottom:24px;"><span class="badge badge-completed">Completed · Maintained</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>A command-line security reconnaissance and passive-assessment tool designed to consolidate multiple security checks into a structured workflow and produce structured reports.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Problem</div><p>Security reconnaissance often requires multiple tools and manual correlation of information from different sources. SecureScope organizes common passive security checks into a single workflow.</p></div>
+    <div class="modal-section">
+      <div class="modal-section-title">Scanning Modules</div>
+      <div class="modal-tech">
+        <span class="modal-tech-tag">HTTP security headers</span><span class="modal-tech-tag">Content Security Policy</span><span class="modal-tech-tag">HSTS</span><span class="modal-tech-tag">Referrer Policy</span><span class="modal-tech-tag">SPF</span><span class="modal-tech-tag">DMARC</span><span class="modal-tech-tag">TLS</span><span class="modal-tech-tag">DNS</span><span class="modal-tech-tag">CORS</span><span class="modal-tech-tag">JavaScript analysis</span><span class="modal-tech-tag">API checks</span><span class="modal-tech-tag">Technology disclosure</span>
+      </div>
+    </div>
+    <div class="modal-section"><div class="modal-section-title">Architecture &amp; Output</div><p>Modular scanner architecture where individual checks operate as separate modules. Results consolidated into structured reports in HTML, JSON, and Markdown formats. Includes multiple predefined scanning profiles for different assessment requirements.</p></div>
+    <div class="modal-links"><a href="https://github.com/DeeeeJayy/securescope" target="_blank" rel="noopener noreferrer" class="modal-link">↗ View on GitHub</a></div>
+  </div>
+</div>
+
+<div id="proj-ofa" class="modal-overlay" role="dialog" aria-modal="true" aria-label="ONE FOR ALL" onclick="if(event.target===this)closeModal('proj-ofa')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-ofa')" aria-label="Close">✕</button>
+    <div class="modal-category">Cybersecurity Utility · CTF Toolkit · CLI</div>
+    <h2 class="modal-title">ONE FOR ALL</h2>
+    <div style="margin-bottom:24px;"><span class="badge badge-completed">Completed</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>An interactive cybersecurity and CTF utility that combines commonly required encoding, decoding, hashing, cryptographic, and text-transformation operations into one command-line interface. Uses an interactive CLI workflow rather than requiring complex argument memorization.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Problem</div><p>During CTFs and security exercises, analysts constantly switch between different utilities for encoding, decoding, hashing, and cryptographic transformations. ONE FOR ALL consolidates these into a single interactive session.</p></div>
+    <div class="modal-section">
+      <div class="modal-section-title">Operations Supported</div>
+      <div class="modal-tech">
+        <span class="modal-tech-tag">Base64</span><span class="modal-tech-tag">Base32</span><span class="modal-tech-tag">Hexadecimal</span><span class="modal-tech-tag">Binary</span><span class="modal-tech-tag">URL encoding/decoding</span><span class="modal-tech-tag">Auto transformation chains</span><span class="modal-tech-tag">Hash identification</span><span class="modal-tech-tag">ROT13</span><span class="modal-tech-tag">Caesar cipher</span><span class="modal-tech-tag">Atbash</span><span class="modal-tech-tag">XOR</span><span class="modal-tech-tag">RSA-related operations</span>
+      </div>
+    </div>
+    <div class="modal-links"><a href="https://github.com/DeeeeJayy/one_for_all" target="_blank" rel="noopener noreferrer" class="modal-link">↗ View on GitHub</a></div>
+  </div>
+</div>
+
+<div id="proj-crawler" class="modal-overlay" role="dialog" aria-modal="true" aria-label="CyberSec Opportunity Crawler" onclick="if(event.target===this)closeModal('proj-crawler')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-crawler')" aria-label="Close">✕</button>
+    <div class="modal-category">Intelligence · Web Crawler · Discord Bot · Web Dashboard</div>
+    <h2 class="modal-title">CyberSec Opportunity Crawler</h2>
+    <div style="margin-bottom:24px;"><span class="badge badge-current">Active Development</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>An opportunity-intelligence system integrated with the Neutron Discord bot and Nucleus web dashboard. Gathers cybersecurity internships, jobs, CTFs, hackathons, and events from 13+ sources using a pluggable source architecture.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Problem</div><p>Cybersecurity opportunities are scattered across numerous websites and platforms. The system automatically collects and normalizes relevant opportunities into a searchable, centralized system with automated distribution to Discord channels.</p></div>
+    <div class="modal-section">
+      <div class="modal-section-title">Architecture</div>
+      <p style="margin-bottom:12px;">Crawler Core → Classification → SQLite → Neutron (Discord) + Nucleus (Dashboard)</p>
+      <div class="modal-tech">
+        <span class="modal-tech-tag">Parallel source processing</span><span class="modal-tech-tag">HTTP retry with backoff</span><span class="modal-tech-tag">Relevance classification</span><span class="modal-tech-tag">Data normalization</span><span class="modal-tech-tag">SQLite persistence</span><span class="modal-tech-tag">Scheduled crawling</span><span class="modal-tech-tag">Subscription system</span><span class="modal-tech-tag">Docker Compose</span>
+      </div>
+    </div>
+    <div class="modal-section"><div class="modal-section-title">Technologies</div><div class="modal-tech"><span class="modal-tech-tag">Node.js</span><span class="modal-tech-tag">JavaScript</span><span class="modal-tech-tag">SQLite</span><span class="modal-tech-tag">Express</span><span class="modal-tech-tag">EJS</span><span class="modal-tech-tag">Axios</span><span class="modal-tech-tag">Discord API</span><span class="modal-tech-tag">Docker</span><span class="modal-tech-tag">Docker Compose</span><span class="modal-tech-tag">Jest</span><span class="modal-tech-tag">ESLint</span></div></div>
+    <div class="modal-section"><div class="modal-section-title">Security Considerations</div><p>Environment-based secret management, authorized Discord scanning, optional dashboard authentication, search cooldowns, request timeouts, retry handling, graceful shutdown, and separation between crawler and interface layers.</p></div>
+  </div>
+</div>
+
+<div id="proj-nucleus" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Nucleus" onclick="if(event.target===this)closeModal('proj-nucleus')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-nucleus')" aria-label="Close">✕</button>
+    <div class="modal-category">Cybersecurity Community · Community Platform</div>
+    <h2 class="modal-title">Nucleus</h2>
+    <div style="margin-bottom:24px;"><span class="badge badge-current">Active</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>A cybersecurity-focused community built around learning, practical experimentation, career opportunities, internships, jobs, and collaborative security activities. Founded and operated by Jagadeeswar Medidaraju.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Community Areas</div><div class="modal-tech"><span class="modal-tech-tag">Bug Bounty</span><span class="modal-tech-tag">CTFs</span><span class="modal-tech-tag">Web Security</span><span class="modal-tech-tag">Red Team</span><span class="modal-tech-tag">Blue Team</span><span class="modal-tech-tag">Digital Forensics</span><span class="modal-tech-tag">OSINT</span><span class="modal-tech-tag">Programming</span><span class="modal-tech-tag">AI</span><span class="modal-tech-tag">Cloud</span></div></div>
+    <div class="modal-section"><div class="modal-section-title">Community Principle</div><p style="font-family:var(--font-mono);color:var(--cyan);">LEARN WHATEVER MEANS NECESSARY · LEARN || COPY || STEAL</p></div>
+    <div class="modal-links"><a href="https://discord.gg/75gKG8PxkC" target="_blank" rel="noopener noreferrer" class="modal-link">↗ Join Nucleus Discord</a></div>
+  </div>
+</div>
+
+<div id="proj-neutron" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Neutron" onclick="if(event.target===this)closeModal('proj-neutron')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-neutron')" aria-label="Close">✕</button>
+    <div class="modal-category">Discord Bot · Community Infrastructure · Automation</div>
+    <h2 class="modal-title">Neutron</h2>
+    <div style="margin-bottom:24px;"><span class="badge badge-current">Active Development</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>Custom Discord bot serving as the automation and interaction layer for the Nucleus cybersecurity community. Designed to support cybersecurity learning, challenges, events, opportunity discovery, and community automation.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Current Capabilities</div><div class="modal-tech"><span class="modal-tech-tag">/search</span><span class="modal-tech-tag">/jobs</span><span class="modal-tech-tag">/internships</span><span class="modal-tech-tag">/ctfs</span><span class="modal-tech-tag">/hackathons</span><span class="modal-tech-tag">/scan</span><span class="modal-tech-tag">/stats</span><span class="modal-tech-tag">/subscribe</span><span class="modal-tech-tag">/sources</span><span class="modal-tech-tag">/bot-status</span></div></div>
+    <div class="modal-section"><div class="modal-section-title">Roadmap</div><div class="modal-tech"><span class="modal-tech-tag">Challenge lifecycle system</span><span class="modal-tech-tag">AI-generated questions</span><span class="modal-tech-tag">User API-key support</span><span class="modal-tech-tag">Web dashboard</span><span class="modal-tech-tag">Event management</span><span class="modal-tech-tag">Community analytics</span></div></div>
+  </div>
+</div>
+
+<div id="proj-cryptclash" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Crypt Clash" onclick="if(event.target===this)closeModal('proj-cryptclash')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-cryptclash')" aria-label="Close">✕</button>
+    <div class="modal-category">CTF Platform · Event Infrastructure · Backend Engineering</div>
+    <h2 class="modal-title">Crypt Clash · TECHASTRA 2026</h2>
+    <div style="margin-bottom:24px;"><span class="badge badge-current">Upcoming · Being Conducted</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>Crypt Clash is a cybersecurity CTF being conducted as part of TECHASTRA 2026, the college symposium. Full responsibility for complete technical platform, backend development, and technical team leadership.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Role</div><p>CTF Platform Developer &amp; Technical Team Lead. Designed and developed the complete platform, guided the technical team, coordinated responsibilities, reviewed and integrated technical work, and prepared the platform for the live event.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Work Involved</div><div class="modal-tech"><span class="modal-tech-tag">CTF platform development</span><span class="modal-tech-tag">Backend architecture</span><span class="modal-tech-tag">Challenge planning</span><span class="modal-tech-tag">Rules &amp; regulations</span><span class="modal-tech-tag">Participant workflows</span><span class="modal-tech-tag">Event structure</span><span class="modal-tech-tag">Team coordination</span><span class="modal-tech-tag">Event preparation</span></div></div>
+  </div>
+</div>
+
+<div id="proj-arsenalx" class="modal-overlay" role="dialog" aria-modal="true" aria-label="ArsenalX" onclick="if(event.target===this)closeModal('proj-arsenalx')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-arsenalx')" aria-label="Close">✕</button>
+    <div class="modal-category">Cybersecurity Utility · CLI · Experimental</div>
+    <h2 class="modal-title">ArsenalX</h2>
+    <div style="margin-bottom:24px;"><span class="badge badge-experimental">Experimental</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>A cybersecurity-oriented command-line utility project focused on bringing security-related functionality into an accessible workflow. Explores how commonly used cybersecurity functionality can be organized into a centralized utility.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Status</div><p>Development / Experimental. Further development depends on the evolution of the tool and the functionality ultimately selected for the project.</p></div>
+    <div class="modal-links"><a href="https://github.com/DeeeeJayy/arsenalx" target="_blank" rel="noopener noreferrer" class="modal-link">↗ View on GitHub</a></div>
+  </div>
+</div>
+
+<div id="proj-cyberrakshak" class="modal-overlay" role="dialog" aria-modal="true" aria-label="CyberRakshak" onclick="if(event.target===this)closeModal('proj-cyberrakshak')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('proj-cyberrakshak')" aria-label="Close">✕</button>
+    <div class="modal-category">Cybersecurity · Privacy · Digital Protection</div>
+    <h2 class="modal-title">CyberRakshak</h2>
+    <div style="margin-bottom:24px;"><span class="badge badge-planned">Concept / Development</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>A cybersecurity concept exploring digital protection, privacy, cybersecurity awareness, and the broader security implications of handling personal and digital information. The project remains an evolving concept rather than a finalized product.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Areas Explored</div><div class="modal-tech"><span class="modal-tech-tag">Data protection</span><span class="modal-tech-tag">Cybersecurity awareness</span><span class="modal-tech-tag">Privacy</span><span class="modal-tech-tag">Digital security</span><span class="modal-tech-tag">Indian cyber-law</span></div></div>
+  </div>
+</div>
+
+<!-- ======================== SKILLS ======================== -->
+<section id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">08 · CYBERSECURITY SKILLS</div>
+      <h2 class="section-title" id="skills-title">Technical Capabilities</h2>
+      <p class="section-subtitle">Practical skills developed through certifications, internships, CTFs, and independent security research.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="card skill-group reveal">
+        <div class="skill-group-header">
+          <div class="skill-group-icon" style="background:rgba(244,63,94,0.1);border:1px solid rgba(244,63,94,0.2);color:#f43f5e;">⚔</div>
+          <div class="skill-group-name">Offensive Security</div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">Web Penetration Testing</div>
+          <div class="skill-item">Reconnaissance &amp; Enumeration</div>
+          <div class="skill-item">Vulnerability Assessment</div>
+          <div class="skill-item">Exploitation</div>
+          <div class="skill-item">Post-Exploitation</div>
+          <div class="skill-item">Privilege Escalation</div>
+          <div class="skill-item">Reverse Shells</div>
+          <div class="skill-item">Bug Bounty Methodology</div>
+        </div>
+      </div>
+      <div class="card skill-group reveal reveal-delay-1">
+        <div class="skill-group-header">
+          <div class="skill-group-icon" style="background:var(--cyan-dim);border:1px solid rgba(56,189,248,0.2);">🔍</div>
+          <div class="skill-group-name">Digital Forensics &amp; OSINT</div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">Email &amp; Header Analysis</div>
+          <div class="skill-item">Network Investigation</div>
+          <div class="skill-item">Digital Artifact Analysis</div>
+          <div class="skill-item">OSINT Investigation</div>
+          <div class="skill-item">Digital Evidence Analysis</div>
+          <div class="skill-item">Forensic Investigation Workflows</div>
+        </div>
+      </div>
+      <div class="card skill-group reveal reveal-delay-2">
+        <div class="skill-group-header">
+          <div class="skill-group-icon" style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);color:#f59e0b;">⚙</div>
+          <div class="skill-group-name">Reverse Engineering</div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">Static Analysis</div>
+          <div class="skill-item">Dynamic Analysis</div>
+          <div class="skill-item">Malware Analysis (Developing)</div>
+          <div class="skill-item">Ghidra</div>
+          <div class="skill-item">Binary Analysis</div>
+        </div>
+      </div>
+      <div class="card skill-group reveal">
+        <div class="skill-group-header">
+          <div class="skill-group-icon" style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:#3b82f6;">🖥</div>
+          <div class="skill-group-name">Systems &amp; Networking</div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">Linux / Kali Linux</div>
+          <div class="skill-item">Windows</div>
+          <div class="skill-item">TCP/IP &amp; Network Analysis</div>
+          <div class="skill-item">Networking Fundamentals</div>
+          <div class="skill-item">Virtualization</div>
+          <div class="skill-item">SSH &amp; Command-line Investigation</div>
+        </div>
+      </div>
+      <div class="card skill-group reveal reveal-delay-1">
+        <div class="skill-group-header">
+          <div class="skill-group-icon" style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);color:#22c55e;">{ }</div>
+          <div class="skill-group-name">Programming &amp; Development</div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">Python (Security &amp; Tooling)</div>
+          <div class="skill-item">Bash Scripting</div>
+          <div class="skill-item">JavaScript / Node.js</div>
+          <div class="skill-item">HTML / CSS</div>
+          <div class="skill-item">Reading &amp; Analyzing Code</div>
+          <div class="skill-item">Modifying &amp; Adapting Scripts</div>
+          <div class="skill-item">REST APIs &amp; SQLite</div>
+        </div>
+      </div>
+      <div class="card skill-group reveal reveal-delay-2">
+        <div class="skill-group-header">
+          <div class="skill-group-icon" style="background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2);color:#a855f7;">◈</div>
+          <div class="skill-group-name">Security Analysis</div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">CTF Problem Solving</div>
+          <div class="skill-item">Security Tool Configuration</div>
+          <div class="skill-item">Technical Investigation</div>
+          <div class="skill-item">Cryptography Fundamentals</div>
+          <div class="skill-item">Technical Documentation &amp; Writeups</div>
+          <div class="skill-item">Integration &amp; Quality Review</div>
+        </div>
+      </div>
+    </div>
+    <div class="card reveal mt-24" style="padding:24px 28px;">
+      <div class="profile-card-title" style="margin-bottom:16px;">Programming Note</div>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.75;">Programming and scripting familiarity is primarily from a security and code-understanding perspective. I can read and understand existing code, analyze scripts, make modifications, troubleshoot issues, and adapt code for specific requirements. Independently writing larger programs from scratch is a skill currently in development.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TOOLS ======================== -->
+<section id="tools" aria-labelledby="tools-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">09 · TOOLS &amp; TECHNOLOGIES</div>
+      <h2 class="section-title" id="tools-title">Technology Stack</h2>
+      <p class="section-subtitle">Tools and technologies used, practiced with, or incorporated into cybersecurity learning and projects. Depth of experience varies by tool.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="card tool-group reveal">
+        <div class="tool-group-title">Offensive Security</div>
+        <div class="tool-items">
+          <span class="tool-item">Burp Suite</span>
+          <span class="tool-item">Nmap</span>
+          <span class="tool-item">Metasploit Framework</span>
+          <span class="tool-item">Gobuster</span>
+          <span class="tool-item">ffuf</span>
+          <span class="tool-item">Nikto</span>
+          <span class="tool-item">SQLmap</span>
+        </div>
+      </div>
+      <div class="card tool-group reveal reveal-delay-1">
+        <div class="tool-group-title">Network &amp; Analysis</div>
+        <div class="tool-items">
+          <span class="tool-item">Wireshark</span>
+          <span class="tool-item">Nmap</span>
+          <span class="tool-item">DNS Tools</span>
+          <span class="tool-item">TCP/IP Analysis</span>
+        </div>
+      </div>
+      <div class="card tool-group reveal reveal-delay-2">
+        <div class="tool-group-title">RE &amp; Forensics</div>
+        <div class="tool-items">
+          <span class="tool-item">Ghidra</span>
+          <span class="tool-item">Linux Forensics Tools</span>
+          <span class="tool-item">Hashcat</span>
+          <span class="tool-item">John the Ripper</span>
+        </div>
+      </div>
+      <div class="card tool-group reveal">
+        <div class="tool-group-title">Operating Systems</div>
+        <div class="tool-items">
+          <span class="tool-item">Kali Linux</span>
+          <span class="tool-item">Linux</span>
+          <span class="tool-item">Windows</span>
+          <span class="tool-item">VirtualBox</span>
+        </div>
+      </div>
+      <div class="card tool-group reveal reveal-delay-1">
+        <div class="tool-group-title">Development</div>
+        <div class="tool-items">
+          <span class="tool-item">Python</span>
+          <span class="tool-item">Bash</span>
+          <span class="tool-item">JavaScript</span>
+          <span class="tool-item">HTML</span>
+          <span class="tool-item">CSS</span>
+          <span class="tool-item">Node.js</span>
+        </div>
+      </div>
+      <div class="card tool-group reveal reveal-delay-2">
+        <div class="tool-group-title">Infrastructure &amp; Dev</div>
+        <div class="tool-items">
+          <span class="tool-item">Git</span>
+          <span class="tool-item">GitHub</span>
+          <span class="tool-item">Docker</span>
+          <span class="tool-item">Docker Compose</span>
+          <span class="tool-item">SQLite</span>
+          <span class="tool-item">REST APIs</span>
+        </div>
+      </div>
+      <div class="card tool-group reveal">
+        <div class="tool-group-title">Learning Platforms</div>
+        <div class="tool-items">
+          <span class="tool-item">TryHackMe</span>
+          <span class="tool-item">Hack The Box</span>
+          <span class="tool-item">OverTheWire</span>
+          <span class="tool-item">PortSwigger Labs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTF ======================== -->
+<section id="ctf" aria-labelledby="ctf-title" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">10 · CTF &amp; PRACTICAL SECURITY</div>
+      <h2 class="section-title" id="ctf-title">Hands-On Practice</h2>
+      <p class="section-subtitle">Security challenges, CTFs, and practical labs where theory becomes skill.</p>
+    </div>
+    <div class="ctf-platforms">
+      <div class="card ctf-platform-card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div class="ctf-platform-name">TryHackMe</div>
+          <span class="badge badge-current">Active</span>
+        </div>
+        <div class="ctf-platform-desc">Primary structured practical-learning platform combining guided learning paths with hands-on rooms and security exercises. Completing pathways systematically to build a strong practical foundation.</div>
+        <div class="ctf-achievements">
+          <div class="ctf-achievement">Completed Cyber Security 101 learning path</div>
+          <div class="ctf-achievement">Progressing through Junior Penetration Tester pathway</div>
+          <div class="ctf-achievement">Multiple practical labs and security challenges completed</div>
+          <div class="ctf-achievement">Writeups published for selected challenges</div>
+        </div>
+      </div>
+      <div class="card ctf-platform-card reveal reveal-delay-1">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div class="ctf-platform-name">OverTheWire</div>
+          <span class="badge badge-completed">26/26 Levels</span>
+        </div>
+        <div class="ctf-platform-desc">Used to strengthen Linux, command-line, networking, SSH, and problem-solving fundamentals through progressively challenging wargame levels.</div>
+        <div class="ctf-achievements">
+          <div class="ctf-achievement">Completed all 26 levels of Bandit</div>
+          <div class="ctf-achievement">File handling, permissions, SSH, networking, restricted environments</div>
+          <div class="ctf-achievement">Experience documented through a detailed technical writeup</div>
+        </div>
+      </div>
+      <div class="card ctf-platform-card reveal reveal-delay-2">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div class="ctf-platform-name">Hack The Box</div>
+          <span class="badge badge-inprogress">Ongoing</span>
+        </div>
+        <div class="ctf-platform-desc">Practical security labs and challenge-based learning for offensive security skill development and real-world simulation.</div>
+        <div class="ctf-achievements">
+          <div class="ctf-achievement">Practical security labs and machine exploitation</div>
+          <div class="ctf-achievement">Offensive security skill development</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:56px;margin-bottom:32px;">
+      <div class="section-id" style="font-size:0.65rem;">PRACTICAL AREAS</div>
+      <h3 style="color:var(--text-primary);">Skills Developed Through Practice</h3>
+    </div>
+    <div class="flex-wrap reveal" style="margin-bottom:48px;" role="list">
+      <span class="about-tag" role="listitem">Reconnaissance</span>
+      <span class="about-tag" role="listitem">Enumeration</span>
+      <span class="about-tag" role="listitem">Web Security</span>
+      <span class="about-tag" role="listitem">Linux</span>
+      <span class="about-tag" role="listitem">Privilege Escalation</span>
+      <span class="about-tag" role="listitem">Exploitation</span>
+      <span class="about-tag" role="listitem">Reverse Shells</span>
+      <span class="about-tag" role="listitem">Networking</span>
+      <span class="about-tag" role="listitem">Cryptography</span>
+      <span class="about-tag" role="listitem">Digital Forensics</span>
+      <span class="about-tag" role="listitem">Reverse Engineering</span>
+      <span class="about-tag" role="listitem">OSINT</span>
+      <span class="about-tag" role="listitem">Binary Analysis</span>
+      <span class="about-tag" role="listitem">File Analysis</span>
+      <span class="about-tag" role="listitem">SSH</span>
+    </div>
+
+    <div class="section-header" style="margin-top:0;margin-bottom:24px;">
+      <div class="section-id" style="font-size:0.65rem;">SELECTED WRITEUPS</div>
+      <h3 style="color:var(--text-primary);">Technical Documentation</h3>
+    </div>
+    <div class="writeups-grid">
+      <div class="card writeup-card reveal">
+        <div class="writeup-platform-tag">TryHackMe · Boot2Root</div>
+        <div class="writeup-title">Psycho Break</div>
+        <div class="writeup-desc">A Boot2Root challenge covering practical enumeration and exploitation. Full chain: Nmap → FTP → Web Enumeration → Binary Analysis → SSH → Reverse Shell → Privilege Escalation.</div>
+        <div class="writeup-tags">
+          <span class="writeup-tag">Nmap</span><span class="writeup-tag">FTP</span><span class="writeup-tag">Web Enum</span><span class="writeup-tag">Binary</span><span class="writeup-tag">SSH</span><span class="writeup-tag">Reverse Shell</span><span class="writeup-tag">Privesc</span>
+        </div>
+        <a href="https://github.com/DeeeeJayy/Psycho_Break_writeup" target="_blank" rel="noopener noreferrer" class="writeup-link">↗ View Writeup on GitHub</a>
+      </div>
+      <div class="card writeup-card reveal reveal-delay-1">
+        <div class="writeup-platform-tag">TryHackMe · Linux Privilege Escalation</div>
+        <div class="writeup-title">Jump</div>
+        <div class="writeup-desc">Multi-stage Linux privilege escalation walkthrough. Explored PATH hijacking, cron job enumeration, file upload vulnerabilities, user-to-user escalation, and root access via sudo binary.</div>
+        <div class="writeup-tags">
+          <span class="writeup-tag">FTP</span><span class="writeup-tag">File Upload</span><span class="writeup-tag">Cron Jobs</span><span class="writeup-tag">PATH Hijacking</span><span class="writeup-tag">sudo</span><span class="writeup-tag">Privesc</span>
+        </div>
+        <a href="https://medium.com/@deeeejayy/jump-linux-privilege-escalation-walkthrough-0bf88580254a" target="_blank" rel="noopener noreferrer" class="writeup-link">↗ Read on Medium</a>
+      </div>
+      <div class="card writeup-card reveal reveal-delay-2">
+        <div class="writeup-platform-tag">OverTheWire · 26-Level Journey</div>
+        <div class="writeup-title">Bandit Wargame — Full Journey</div>
+        <div class="writeup-desc">Documented journey through all 26 levels of OverTheWire Bandit. Covers command-line investigation, file permissions, SSH, networking, and restricted shell escapes. Reflection on how the challenge transformed problem-solving approach.</div>
+        <div class="writeup-tags">
+          <span class="writeup-tag">Linux</span><span class="writeup-tag">SSH</span><span class="writeup-tag">Networking</span><span class="writeup-tag">Restricted Shells</span><span class="writeup-tag">Permissions</span>
+        </div>
+        <a href="https://medium.com/@deeeejayy/from-what-does-grep-even-do-to-escaping-restricted-shells-my-overthewire-bandit-journey-1dc5b53b8641" target="_blank" rel="noopener noreferrer" class="writeup-link">↗ Read on Medium</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== LEADERSHIP ======================== -->
+<section id="leadership" aria-labelledby="lead-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">11 · LEADERSHIP &amp; COMMUNITY</div>
+      <h2 class="section-title" id="lead-title">Building &amp; Leading</h2>
+      <p class="section-subtitle">Community founding, team coordination, technical mentorship, and event organization.</p>
+    </div>
+    <div class="leadership-grid">
+      <div class="card leadership-card reveal">
+        <div class="leadership-role">Founder &amp; Developer</div>
+        <div class="leadership-title">Nucleus Cybersecurity Community</div>
+        <div class="leadership-desc">Founded and operate Nucleus, a cybersecurity-focused community built around practical learning, CTFs, career opportunities, internships, and collaborative security activities.</div>
+        <div class="leadership-items">
+          <div class="leadership-item">Community structure, roles, and member onboarding</div>
+          <div class="leadership-item">Cybersecurity learning channels and activities</div>
+          <div class="leadership-item">CTF events and knowledge sharing</div>
+          <div class="leadership-item">Opportunity discovery via integrated crawler system</div>
+        </div>
+      </div>
+      <div class="card leadership-card reveal reveal-delay-1">
+        <div class="leadership-role">Lead Developer</div>
+        <div class="leadership-title">Neutron Discord Bot</div>
+        <div class="leadership-desc">Designing and developing Neutron, the custom Discord bot and automation layer for the Nucleus community, shaping community workflows, cybersecurity features, and challenge systems.</div>
+        <div class="leadership-items">
+          <div class="leadership-item">Community workflow automation</div>
+          <div class="leadership-item">Opportunity discovery and distribution</div>
+          <div class="leadership-item">Challenge and quiz system development</div>
+          <div class="leadership-item">Event management infrastructure</div>
+        </div>
+      </div>
+      <div class="card leadership-card reveal">
+        <div class="leadership-role">Module Lead · CyART Internship</div>
+        <div class="leadership-title">Dark-Web Intelligence — Module 2</div>
+        <div class="leadership-desc">Leading development activities and coordinating multiple pods within the Dark-Web Intelligence project. Combined technical contribution with integration review and quality assurance.</div>
+        <div class="leadership-items">
+          <div class="leadership-item">Coordinate Pod 3 and guide pod members</div>
+          <div class="leadership-item">Review technical contributions before integration</div>
+          <div class="leadership-item">Verify implementations meet data contracts</div>
+          <div class="leadership-item">Support other pod leaders with technical guidance</div>
+          <div class="leadership-item">Track dependencies and resolve blockers</div>
+        </div>
+      </div>
+      <div class="card leadership-card reveal reveal-delay-1">
+        <div class="leadership-role">Platform Developer &amp; Technical Lead</div>
+        <div class="leadership-title">Crypt Clash · TECHASTRA 2026</div>
+        <div class="leadership-desc">Responsible for the complete technical platform for the Crypt Clash CTF at TECHASTRA 2026 — the college symposium. Combines event organization, software development, and team leadership.</div>
+        <div class="leadership-items">
+          <div class="leadership-item">Designed and developed complete CTF platform</div>
+          <div class="leadership-item">Backend architecture and functionality</div>
+          <div class="leadership-item">Guided and coordinated the technical team</div>
+          <div class="leadership-item">Challenge planning and participant workflows</div>
+          <div class="leadership-item">Platform preparation for live event</div>
+        </div>
+      </div>
+    </div>
+    <div class="card reveal mt-8" style="padding:24px 28px;">
+      <div class="profile-card-title" style="margin-bottom:12px;">Mentoring &amp; Knowledge Sharing</div>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.75;">Regularly help team members and other learners understand cybersecurity concepts, troubleshoot technical problems, approach challenges, and structure their work. The approach focuses on helping people understand the problem and develop the ability to solve it themselves — not just providing answers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ACHIEVEMENTS ======================== -->
+<section id="achievements" aria-labelledby="ach-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">12 · ACHIEVEMENTS</div>
+      <h2 class="section-title" id="ach-title">Verified Milestones</h2>
+      <p class="section-subtitle">Only verifiable accomplishments, completed milestones, certifications, and significant responsibilities.</p>
+    </div>
+    <div class="achievements-list">
+      <div class="card achievement-card reveal">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-content">
+          <div class="achievement-title">C|PENT Certified</div>
+          <div class="achievement-desc">Earned the Certified Penetration Testing Professional certification from EC-Council — a professional credential focused on practical offensive security and penetration-testing methodologies.</div>
+        </div>
+      </div>
+      <div class="card achievement-card reveal reveal-delay-1">
+        <div class="achievement-icon">✓</div>
+        <div class="achievement-content">
+          <div class="achievement-title">TryHackMe Cyber Security 101 Completed</div>
+          <div class="achievement-desc">Completed the Cyber Security 101 learning path, building practical foundations across core domains including networking, Linux, web security, cryptography, exploitation, and security tooling.</div>
+        </div>
+      </div>
+      <div class="card achievement-card reveal reveal-delay-2">
+        <div class="achievement-icon">⚡</div>
+        <div class="achievement-content">
+          <div class="achievement-title">OverTheWire Bandit — All 26 Levels</div>
+          <div class="achievement-desc">Completed all 26 levels of OverTheWire Bandit, strengthening Linux command-line, enumeration, SSH, and problem-solving skills. Journey documented as a technical writeup on Medium.</div>
+        </div>
+      </div>
+      <div class="card achievement-card reveal">
+        <div class="achievement-icon">🔧</div>
+        <div class="achievement-content">
+          <div class="achievement-title">Cybersecurity Project Development</div>
+          <div class="achievement-desc">Designed and developed multiple independent cybersecurity tools and platforms — including SecureScope, ONE FOR ALL, the Email Header Investigation Tool, and the CyberSec Opportunity Crawler.</div>
+        </div>
+      </div>
+      <div class="card achievement-card reveal reveal-delay-1">
+        <div class="achievement-icon">👥</div>
+        <div class="achievement-content">
+          <div class="achievement-title">Cybersecurity Team Leadership — CyART</div>
+          <div class="achievement-desc">Took leadership responsibilities within the CyART internship, coordinating a development pod, supporting other pod leaders, and managing integration and quality across the Dark-Web Intelligence project.</div>
+        </div>
+      </div>
+      <div class="card achievement-card reveal reveal-delay-2">
+        <div class="achievement-icon">🎯</div>
+        <div class="achievement-content">
+          <div class="achievement-title">Crypt Clash · TECHASTRA 2026</div>
+          <div class="achievement-desc">Designed and developed the complete technical platform for the Crypt Clash CTF and led the technical team responsible for preparing the platform for the college symposium.</div>
+        </div>
+      </div>
+      <div class="card achievement-card reveal">
+        <div class="achievement-icon">🌐</div>
+        <div class="achievement-content">
+          <div class="achievement-title">Nucleus Community — Founder</div>
+          <div class="achievement-desc">Founded Nucleus, a cybersecurity community focused on practical learning, CTFs, opportunities, collaboration, and knowledge sharing, building supporting technical infrastructure and automation.</div>
+        </div>
+      </div>
+      <div class="card achievement-card reveal reveal-delay-1">
+        <div class="achievement-icon">✍</div>
+        <div class="achievement-content">
+          <div class="achievement-title">Technical Writing &amp; Security Research</div>
+          <div class="achievement-desc">Published practical cybersecurity writeups covering CTF challenges, Linux privilege escalation, security concepts, and hands-on learning. Available on Medium and GitHub.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== RESEARCH ======================== -->
+<section id="research" aria-labelledby="research-title" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">13 · RESEARCH &amp; TECHNICAL WRITING</div>
+      <h2 class="section-title" id="research-title">Documentation &amp; Research</h2>
+      <p class="section-subtitle">CTF writeups, Linux research, security concepts, and technical experiments published on Medium and GitHub.</p>
+    </div>
+    <div class="research-grid">
+      <div class="card research-card reveal">
+        <div class="research-type">CTF Walkthrough · Medium</div>
+        <div class="research-title">Jump — Linux Privilege Escalation</div>
+        <div class="research-desc">Multi-stage privilege escalation walkthrough covering FTP anonymous access, file upload vulnerabilities, cron job enumeration, PATH hijacking, and sudo binary exploitation.</div>
+        <a href="https://medium.com/@deeeejayy/jump-linux-privilege-escalation-walkthrough-0bf88580254a" target="_blank" rel="noopener noreferrer" class="research-link">↗ Read on Medium</a>
+      </div>
+      <div class="card research-card reveal reveal-delay-1">
+        <div class="research-type">Wargame Journey · Medium</div>
+        <div class="research-title">OverTheWire Bandit — Full Journey</div>
+        <div class="research-desc">Detailed documentation of 26 levels of Bandit wargame. Covers the lessons, failures, problem-solving approaches, and how the challenge changed understanding of Linux and command-line security.</div>
+        <a href="https://medium.com/@deeeejayy/from-what-does-grep-even-do-to-escaping-restricted-shells-my-overthewire-bandit-journey-1dc5b53b8641" target="_blank" rel="noopener noreferrer" class="research-link">↗ Read on Medium</a>
+      </div>
+      <div class="card research-card reveal reveal-delay-2">
+        <div class="research-type">CTF Writeup · GitHub</div>
+        <div class="research-title">Psycho Break — Boot2Root</div>
+        <div class="research-desc">Boot2Root challenge walkthrough covering full exploitation chain from enumeration through privilege escalation, with binary analysis and SSH techniques documented in detail.</div>
+        <a href="https://github.com/DeeeeJayy/Psycho_Break_writeup" target="_blank" rel="noopener noreferrer" class="research-link">↗ View on GitHub</a>
+      </div>
+      <div class="card research-card reveal">
+        <div class="research-type">Security Concepts · Medium</div>
+        <div class="research-title">Security Research &amp; Practical Experiments</div>
+        <div class="research-desc">Technical articles covering cybersecurity concepts, practical experiments, penetration-testing analysis, Linux command-line techniques, and social engineering considerations.</div>
+        <a href="https://medium.com/@deeeejayy" target="_blank" rel="noopener noreferrer" class="research-link">↗ Medium Blog</a>
+      </div>
+      <div class="card research-card reveal reveal-delay-1">
+        <div class="research-type">Open Source · GitHub</div>
+        <div class="research-title">Security Tool Development</div>
+        <div class="research-desc">Open-source cybersecurity tools including SecureScope, ONE FOR ALL, and Email Header Investigation Tool. Documentation, architecture notes, and technical decisions available in repositories.</div>
+        <a href="https://github.com/DeeeeJayy" target="_blank" rel="noopener noreferrer" class="research-link">↗ GitHub Profile</a>
+      </div>
+      <div class="card research-card reveal reveal-delay-2">
+        <div class="research-type">Learning Roadmap · Self-Directed</div>
+        <div class="research-title">Ongoing CTF &amp; Security Research</div>
+        <div class="research-desc">Continuous work on security challenges, practical labs, and research documentation. Committed to publishing writeups as learning progresses: challenges, techniques, failures, and solutions.</div>
+        <a href="https://medium.com/@deeeejayy" target="_blank" rel="noopener noreferrer" class="research-link">↗ Follow on Medium</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CURRENT WORK ======================== -->
+<section id="current" aria-labelledby="current-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">14 · CURRENT WORK</div>
+      <h2 class="section-title" id="current-title">What I'm Working On</h2>
+      <p class="section-subtitle">Active projects, ongoing learning, and current responsibilities as of now.</p>
+    </div>
+    <div class="current-grid">
+      <div class="card current-card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;"><div class="current-card-label">CyART Internship</div><span class="badge badge-current">Active</span></div>
+        <div class="current-card-title">Dark-Web Intelligence</div>
+        <div class="current-card-desc">Working on Module 2 of the Dark-Web Intelligence project as Cybersecurity Intern &amp; Team Lead. Focus areas: crawling, data collection, processing, quality, deduplication, and integration between components.</div>
+      </div>
+      <div class="card current-card reveal reveal-delay-1">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;"><div class="current-card-label">EC-Council Preparation</div><span class="badge badge-inprogress">Preparing</span></div>
+        <div class="current-card-title">CEH Certification</div>
+        <div class="current-card-desc">Preparing for the Certified Ethical Hacker (CEH) certification. Strengthening knowledge across ethical hacking methodologies, reconnaissance, enumeration, vulnerability assessment, and web security.</div>
+      </div>
+      <div class="card current-card reveal reveal-delay-2">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;"><div class="current-card-label">TryHackMe</div><span class="badge badge-inprogress">In Progress</span></div>
+        <div class="current-card-title">Junior Penetration Tester Path</div>
+        <div class="current-card-desc">Progressing through the Junior Penetration Tester learning path, strengthening practical skills in reconnaissance, enumeration, web security, exploitation, and penetration-testing methodology.</div>
+      </div>
+      <div class="card current-card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;"><div class="current-card-label">Community</div><span class="badge badge-current">Active</span></div>
+        <div class="current-card-title">Nucleus &amp; Neutron</div>
+        <div class="current-card-desc">Continuing development of the Nucleus cybersecurity community and Neutron Discord infrastructure. Current work includes community automation, opportunity discovery, CTF functionality, and platform development.</div>
+      </div>
+      <div class="card current-card reveal reveal-delay-1">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;"><div class="current-card-label">TECHASTRA 2026</div><span class="badge badge-current">Upcoming</span></div>
+        <div class="current-card-title">Crypt Clash CTF Platform</div>
+        <div class="current-card-desc">Developing and preparing the Crypt Clash CTF platform for TECHASTRA 2026 while leading the technical team responsible for the event platform. Backend architecture and event preparation ongoing.</div>
+      </div>
+      <div class="card current-card reveal reveal-delay-2">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;"><div class="current-card-label">Practical Security</div><span class="badge badge-inprogress">Ongoing</span></div>
+        <div class="current-card-title">C|PENT Practical Development</div>
+        <div class="current-card-desc">Building on C|PENT knowledge through practical security exercises, labs, penetration-testing workflows, and hands-on experimentation across offensive security domains.</div>
+      </div>
+    </div>
+    <div class="card reveal mt-24" style="padding:24px 28px;text-align:center;">
+      <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--cyan);letter-spacing:0.1em;margin-bottom:8px;">CURRENT FOCUS</div>
+      <div style="font-family:var(--font-mono);font-size:0.9rem;color:var(--text-secondary);letter-spacing:0.05em;">Learn → Build → Lead → Test → Document → Improve</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ROADMAP ======================== -->
+<section id="roadmap" aria-labelledby="roadmap-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">15 · FUTURE ROADMAP</div>
+      <h2 class="section-title" id="roadmap-title">Where I'm Heading</h2>
+      <p class="section-subtitle">Realistic areas of technical development based on current direction and goals.</p>
+    </div>
+    <div class="roadmap-grid">
+      <div class="card roadmap-item reveal">
+        <span class="badge badge-planned" style="margin-bottom:12px;">Deepening</span>
+        <div class="roadmap-area">Advanced Penetration Testing</div>
+        <div class="roadmap-desc">Moving beyond fundamentals into advanced offensive techniques, complex exploitation chains, and real-world assessment methodology.</div>
+      </div>
+      <div class="card roadmap-item reveal reveal-delay-1">
+        <span class="badge badge-planned" style="margin-bottom:12px;">Deepening</span>
+        <div class="roadmap-area">Advanced Web Application Security</div>
+        <div class="roadmap-desc">Advanced web vulnerabilities, business-logic flaws, API security, and modern web security concepts beyond OWASP Top 10.</div>
+      </div>
+      <div class="card roadmap-item reveal reveal-delay-2">
+        <span class="badge badge-planned" style="margin-bottom:12px;">New Area</span>
+        <div class="roadmap-area">Active Directory Security</div>
+        <div class="roadmap-desc">AD enumeration, privilege escalation, lateral movement, Kerberoasting, and enterprise network attack/defense.</div>
+      </div>
+      <div class="card roadmap-item reveal">
+        <span class="badge badge-planned" style="margin-bottom:12px;">Deepening</span>
+        <div class="roadmap-area">Reverse Engineering &amp; Malware Analysis</div>
+        <div class="roadmap-desc">Advancing static and dynamic analysis skills, malware behavior analysis, and binary reverse engineering beyond current working familiarity.</div>
+      </div>
+      <div class="card roadmap-item reveal reveal-delay-1">
+        <span class="badge badge-planned" style="margin-bottom:12px;">Deepening</span>
+        <div class="roadmap-area">Advanced Digital Forensics</div>
+        <div class="roadmap-desc">Memory forensics, artifact analysis, investigation methodology, and formal digital forensics workflows.</div>
+      </div>
+      <div class="card roadmap-item reveal reveal-delay-2">
+        <span class="badge badge-planned" style="margin-bottom:12px;">Building</span>
+        <div class="roadmap-area">Security Research &amp; Tooling</div>
+        <div class="roadmap-desc">Larger-scale cybersecurity tooling projects, automated security systems, and contribution to open-source security research.</div>
+      </div>
+      <div class="card roadmap-item reveal">
+        <span class="badge badge-planned" style="margin-bottom:12px;">Developing</span>
+        <div class="roadmap-area">Advanced Linux &amp; Automation</div>
+        <div class="roadmap-desc">Advanced Linux administration, security automation, scripting for security operations, and infrastructure hardening.</div>
+      </div>
+      <div class="card roadmap-item reveal reveal-delay-1">
+        <span class="badge badge-planned" style="margin-bottom:12px;">Developing</span>
+        <div class="roadmap-area">Network Security &amp; Post-Exploitation</div>
+        <div class="roadmap-desc">Advanced network attacks, post-exploitation methodology, lateral movement, and persistence techniques in controlled lab environments.</div>
+      </div>
+      <div class="card roadmap-item reveal reveal-delay-2">
+        <span class="badge badge-planned" style="margin-bottom:12px;">Improving</span>
+        <div class="roadmap-area">Programming &amp; Security Development</div>
+        <div class="roadmap-desc">Developing ability to independently write larger programs from scratch, focused on security tooling, automation, and exploit development fundamentals.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CAREER GOALS ======================== -->
+<section id="goals" aria-labelledby="goals-title" style="background:var(--bg-secondary);">
+  <div class="container-narrow">
+    <div class="section-header reveal">
+      <div class="section-id">16 · CAREER GOALS</div>
+      <h2 class="section-title" id="goals-title">Professional Direction</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div class="card reveal" style="padding:28px;">
+        <div class="profile-card-title" style="margin-bottom:12px;">Near-Term Focus</div>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.75;">Building deeper practical cybersecurity experience through internships, hands-on security work, certifications, CTFs, and independent development. Current stage is focused on strengthening the technical foundation across offensive security, digital forensics, and security engineering before specializing too narrowly.</p>
+      </div>
+      <div class="card reveal reveal-delay-1" style="padding:28px;">
+        <div class="profile-card-title" style="margin-bottom:12px;">Long-Term Direction</div>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.75;">Developing into a capable cybersecurity professional with deep expertise in penetration testing, security engineering, and digital forensics. Contributing to meaningful security work — through assessments, tool development, research, or security operations — while continuing to build and share knowledge with the security community.</p>
+      </div>
+      <div class="card reveal reveal-delay-2" style="padding:28px;">
+        <div class="profile-card-title" style="margin-bottom:12px;">Available For</div>
+        <div class="flex-wrap">
+          <span class="about-tag">Cybersecurity Internships</span>
+          <span class="about-tag">Security Research</span>
+          <span class="about-tag">Penetration Testing</span>
+          <span class="about-tag">CTF Teams</span>
+          <span class="about-tag">Open Source Collaboration</span>
+          <span class="about-tag">Technical Projects</span>
+          <span class="about-tag">Community Activities</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PHILOSOPHY ======================== -->
+<section id="philosophy" aria-labelledby="phil-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">17 · PERSONAL PHILOSOPHY</div>
+      <h2 class="section-title" id="phil-title">How I Think &amp; Work</h2>
+    </div>
+    <div class="philosophy-tagline reveal">
+      "Survive whatever means Necessary ( Learn || Copy || Steal )" — Understanding beats collecting certificates. Practical knowledge beats theoretical familiarity.
+    </div>
+    <div class="philosophy-grid">
+      <div class="card philosophy-card reveal">
+        <div class="philosophy-title">How I Learn</div>
+        <div class="philosophy-text">I prefer a hands-on and investigation-driven approach. Instead of only studying a concept theoretically, I try to understand how it behaves in a practical environment. I experiment, test different approaches, troubleshoot failures, and research the underlying concepts when something does not make sense.</div>
+      </div>
+      <div class="card philosophy-card reveal reveal-delay-1">
+        <div class="philosophy-title">Why I Build</div>
+        <div class="philosophy-text">Projects begin with a practical problem, a technical curiosity, or something I want to understand more deeply. Not every project becomes a product — some are practical utilities, some are learning exercises, some are experiments. Together they represent progression, not just output.</div>
+      </div>
+      <div class="card philosophy-card reveal reveal-delay-2">
+        <div class="philosophy-title">My Approach to Security</div>
+        <div class="philosophy-text">When approaching a security problem, I try to understand the system first rather than immediately reaching for a tool. The structured cycle is: Understand → Investigate → Experiment → Test → Learn → Improve. Tools serve methodology, not the other way around.</div>
+      </div>
+      <div class="card philosophy-card reveal reveal-delay-3">
+        <div class="philosophy-title">Continuous Improvement</div>
+        <div class="philosophy-text">Cybersecurity is a field where continuous learning is essential. Every unfamiliar system or problem is an opportunity to understand something new. Getting stuck is part of the process. Documenting what I learn — including failures — is how the knowledge compounds.</div>
+      </div>
+    </div>
+    <div class="card reveal mt-24" style="padding:28px;text-align:center;">
+      <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin-bottom:16px;letter-spacing:0.1em;">LEARNING CYCLE</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;">
+        <span class="method-step">Learn</span><span class="method-arrow">→</span>
+        <span class="method-step">Practice</span><span class="method-arrow">→</span>
+        <span class="method-step">Get Stuck</span><span class="method-arrow">→</span>
+        <span class="method-step">Investigate</span><span class="method-arrow">→</span>
+        <span class="method-step">Solve</span><span class="method-arrow">→</span>
+        <span class="method-step">Document</span><span class="method-arrow">→</span>
+        <span class="method-step">Improve</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ONLINE PRESENCE ======================== -->
+<section id="online" aria-labelledby="online-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">18 · ONLINE PRESENCE</div>
+      <h2 class="section-title" id="online-title">Digital Footprint</h2>
+      <p class="section-subtitle">Where to find my work, writing, and professional profile across the web.</p>
+    </div>
+    <div class="presence-grid">
+      <div class="card presence-card reveal">
+        <div class="presence-platform">GitHub</div>
+        <div class="presence-handle">DeeeeJayy</div>
+        <div class="presence-desc">Source code, cybersecurity projects, security tools, writeups, documentation, and development work. Primary repository for all open-source contributions.</div>
+        <a href="https://github.com/DeeeeJayy" target="_blank" rel="noopener noreferrer" class="presence-link" aria-label="GitHub profile">↗ github.com/DeeeeJayy</a>
+      </div>
+      <div class="card presence-card reveal reveal-delay-1">
+        <div class="presence-platform">TryHackMe</div>
+        <div class="presence-handle">Deeeejayy</div>
+        <div class="presence-desc">Hands-on cybersecurity learning, penetration-testing labs, security challenges, and structured learning paths. Active platform for practical skill development.</div>
+        <a href="https://tryhackme.com/p/Deeeejayy" target="_blank" rel="noopener noreferrer" class="presence-link" aria-label="TryHackMe profile">↗ tryhackme.com/p/Deeeejayy</a>
+      </div>
+      <div class="card presence-card reveal reveal-delay-2">
+        <div class="presence-platform">LinkedIn</div>
+        <div class="presence-handle">Jagadeeswar Medidaraju</div>
+        <div class="presence-desc">Professional profile covering education, certifications, cybersecurity experience, projects, and career development.</div>
+        <a href="https://linkedin.com/in/jagadeeswar-m" target="_blank" rel="noopener noreferrer" class="presence-link" aria-label="LinkedIn profile">↗ linkedin.com/in/jagadeeswar-m</a>
+      </div>
+      <div class="card presence-card reveal">
+        <div class="presence-platform">Medium</div>
+        <div class="presence-handle">Deeeejayy</div>
+        <div class="presence-desc">Technical articles, CTF walkthroughs, Linux privilege-escalation writeups, cybersecurity concepts, practical experiments, and security learning documentation.</div>
+        <a href="https://medium.com/@deeeejayy" target="_blank" rel="noopener noreferrer" class="presence-link" aria-label="Medium blog">↗ medium.com/@deeeejayy</a>
+      </div>
+      <div class="card presence-card reveal reveal-delay-1">
+        <div class="presence-platform">Portfolio</div>
+        <div class="presence-handle">Jagadeeswar Medidaraju / Deeeejayy</div>
+        <div class="presence-desc">Consolidated portfolio of cybersecurity skills, projects, experience, practical work, technical interests, and professional development.</div>
+        <a href="https://github.com/DeeeeJayy/Portfolio" target="_blank" rel="noopener noreferrer" class="presence-link" aria-label="Portfolio repository">↗ github.com/DeeeeJayy/Portfolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CONTACT ======================== -->
+<section id="contact" aria-labelledby="contact-title" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">19 · CONTACT</div>
+      <h2 class="section-title" id="contact-title">Get In Touch</h2>
+      <p class="section-subtitle">Available for relevant cybersecurity opportunities, internships, collaborations, and technical projects.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <a href="mailto:djeducationalmail@gmail.com" class="contact-item" aria-label="Send email">
+          <div class="contact-icon">✉</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">djeducationalmail@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://github.com/DeeeeJayy" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="GitHub profile">
+          <div class="contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">GitHub</div>
+            <div class="contact-item-value">github.com/DeeeeJayy</div>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/jagadeeswar-m" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="LinkedIn profile">
+          <div class="contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">LinkedIn</div>
+            <div class="contact-item-value">jagadeeswar-m</div>
+          </div>
+        </a>
+        <div class="contact-item" style="pointer-events:none;cursor:default;">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">India</div>
+          </div>
+        </div>
+      </div>
+      <div class="card contact-cta reveal reveal-delay-1">
+        <div class="contact-cta-title">Let's work together</div>
+        <div class="contact-cta-text">I'm available for cybersecurity internships, collaborative security projects, CTF team participation, and open-source contributions. If you're working on something interesting in cybersecurity, I'd like to hear about it.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;">
+          <span class="about-tag">Cybersecurity Internships</span>
+          <span class="about-tag">Security Research</span>
+          <span class="about-tag">CTF Teams</span>
+          <span class="about-tag">Open Source</span>
+          <span class="about-tag">Technical Collaboration</span>
+        </div>
+        <a href="mailto:djeducationalmail@gmail.com" class="btn btn-primary">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== APPENDIX ======================== -->
+<section id="appendix" aria-labelledby="appendix-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">20 · APPENDIX</div>
+      <h2 class="section-title" id="appendix-title">Technical Archive</h2>
+      <p class="section-subtitle">Complete reference inventory of projects, tools, certifications, CTF history, and learning roadmap.</p>
+    </div>
+    <div class="accordion reveal">
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+          <div class="accordion-title"><span class="accordion-id">A</span> Complete Project Inventory</div>
+          <span class="accordion-chevron">▼</span>
+        </div>
+        <div class="accordion-body">
+          <div class="tools-grid" style="margin-top:4px;">
+            <div style="padding:16px 0;">
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Cybersecurity Tools</div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">SecureScope</strong> — CLI reconnaissance and passive security assessment. Modular scanner architecture. HTML/JSON/Markdown output.</div>
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">ONE FOR ALL</strong> — Interactive CTF/cybersecurity utility. Encoding, decoding, hashing, cryptography, automatic transformation chains.</div>
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">Email Header Investigation Tool</strong> — Email forensics platform. SPF/DKIM/DMARC, graph visualization, tracking detection. v1.3.1.</div>
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">ArsenalX</strong> — Cybersecurity CLI utility project. Experimental stage.</div>
+              </div>
+            </div>
+            <div style="padding:16px 0;">
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Platforms &amp; Community</div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">CyberSec Opportunity Crawler</strong> — 13-source crawler. SQLite. Discord + web dashboard. Active development.</div>
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">Neutron</strong> — Discord bot for Nucleus community. Opportunity discovery, challenges, automation. Active development.</div>
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">Nucleus</strong> — Cybersecurity community. Learning, CTFs, jobs, collaboration. Active.</div>
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">Crypt Clash</strong> — CTF platform for TECHASTRA 2026. Upcoming.</div>
+                <div class="timeline-responsibility"><strong style="color:var(--text-primary);">CyberRakshak</strong> — Privacy and digital protection concept. Development.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+          <div class="accordion-title"><span class="accordion-id">B</span> Complete Tool Inventory</div>
+          <span class="accordion-chevron">▼</span>
+        </div>
+        <div class="accordion-body">
+          <div class="tools-grid" style="margin-top:4px;">
+            <div>
+              <div class="tool-group-title">Offensive</div>
+              <div class="tool-items">
+                <span class="tool-item">Burp Suite</span><span class="tool-item">Nmap</span><span class="tool-item">Metasploit</span><span class="tool-item">Gobuster</span><span class="tool-item">ffuf</span><span class="tool-item">Nikto</span><span class="tool-item">SQLmap</span>
+              </div>
+            </div>
+            <div>
+              <div class="tool-group-title">Network</div>
+              <div class="tool-items">
+                <span class="tool-item">Wireshark</span><span class="tool-item">Nmap</span><span class="tool-item">DNS Tools</span><span class="tool-item">TCP/IP Analysis</span>
+              </div>
+            </div>
+            <div>
+              <div class="tool-group-title">RE &amp; Forensics</div>
+              <div class="tool-items">
+                <span class="tool-item">Ghidra</span><span class="tool-item">Hashcat</span><span class="tool-item">John the Ripper</span><span class="tool-item">Linux Forensics</span>
+              </div>
+            </div>
+            <div>
+              <div class="tool-group-title">OS &amp; Env</div>
+              <div class="tool-items">
+                <span class="tool-item">Kali Linux</span><span class="tool-item">Linux</span><span class="tool-item">Windows</span><span class="tool-item">VirtualBox</span>
+              </div>
+            </div>
+            <div>
+              <div class="tool-group-title">Development</div>
+              <div class="tool-items">
+                <span class="tool-item">Python</span><span class="tool-item">Bash</span><span class="tool-item">JavaScript</span><span class="tool-item">Node.js</span><span class="tool-item">HTML</span><span class="tool-item">CSS</span>
+              </div>
+            </div>
+            <div>
+              <div class="tool-group-title">Infrastructure</div>
+              <div class="tool-items">
+                <span class="tool-item">Git</span><span class="tool-item">GitHub</span><span class="tool-item">Docker</span><span class="tool-item">Docker Compose</span><span class="tool-item">SQLite</span><span class="tool-item">REST APIs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+          <div class="accordion-title"><span class="accordion-id">C</span> Certifications &amp; Credentials</div>
+          <span class="accordion-chevron">▼</span>
+        </div>
+        <div class="accordion-body">
+          <div style="display:flex;flex-direction:column;gap:12px;padding-top:8px;">
+            <div class="timeline-responsibility"><strong style="color:var(--text-primary);">C|PENT</strong> — EC-Council. Certified Penetration Testing Professional. <span class="badge badge-completed" style="margin-left:8px;">Certified</span></div>
+            <div class="timeline-responsibility"><strong style="color:var(--text-primary);">Cyber Security 101</strong> — TryHackMe. June 2026. <span class="badge badge-completed" style="margin-left:8px;">Completed</span></div>
+            <div class="timeline-responsibility"><strong style="color:var(--text-primary);">Introduction to Cybercrime</strong> — Simplilearn. April 2026. ID: 10123089. <span class="badge badge-completed" style="margin-left:8px;">Completed</span></div>
+            <div class="timeline-responsibility"><strong style="color:var(--text-primary);">Cybersecurity Analyst Job Simulation</strong> — TCS / Forage. December 2025. ID: ctgGMukJYCop42Crp. <span class="badge badge-completed" style="margin-left:8px;">Completed</span></div>
+            <div class="timeline-responsibility"><strong style="color:var(--text-primary);">Junior Penetration Tester</strong> — TryHackMe. <span class="badge badge-inprogress" style="margin-left:8px;">In Progress</span></div>
+            <div class="timeline-responsibility"><strong style="color:var(--text-primary);">CEH</strong> — EC-Council. <span class="badge badge-inprogress" style="margin-left:8px;">Preparing</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+          <div class="accordion-title"><span class="accordion-id">D</span> CTF &amp; Practical Security History</div>
+          <span class="accordion-chevron">▼</span>
+        </div>
+        <div class="accordion-body">
+          <div style="display:flex;flex-direction:column;gap:16px;padding-top:8px;">
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">TryHackMe</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div class="timeline-responsibility">Psycho Break — Boot2Root (Writeup published on GitHub)</div>
+                <div class="timeline-responsibility">Jump — Linux Privilege Escalation (Writeup published on Medium)</div>
+                <div class="timeline-responsibility">Cyber Security 101 pathway — Completed</div>
+                <div class="timeline-responsibility">Junior Penetration Tester pathway — In Progress</div>
+                <div class="timeline-responsibility">Additional practical labs and security challenges — Ongoing</div>
+              </div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">OverTheWire</div>
+              <div class="timeline-responsibility">Bandit — All 26 levels completed and documented</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Practical Areas Covered</div>
+              <div class="flex-wrap">
+                <span class="writeup-tag">Reconnaissance</span><span class="writeup-tag">Enumeration</span><span class="writeup-tag">Web Security</span><span class="writeup-tag">Linux</span><span class="writeup-tag">Privilege Escalation</span><span class="writeup-tag">Exploitation</span><span class="writeup-tag">Reverse Shells</span><span class="writeup-tag">Networking</span><span class="writeup-tag">Cryptography</span><span class="writeup-tag">Digital Forensics</span><span class="writeup-tag">Reverse Engineering</span><span class="writeup-tag">OSINT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+          <div class="accordion-title"><span class="accordion-id">E</span> Learning Roadmap</div>
+          <span class="accordion-chevron">▼</span>
+        </div>
+        <div class="accordion-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:8px;">
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Completed / Established</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div class="timeline-responsibility">Cybersecurity fundamentals</div>
+                <div class="timeline-responsibility">Linux fundamentals and command-line</div>
+                <div class="timeline-responsibility">Networking fundamentals</div>
+                <div class="timeline-responsibility">Reconnaissance &amp; enumeration</div>
+                <div class="timeline-responsibility">Vulnerability assessment</div>
+                <div class="timeline-responsibility">Exploitation fundamentals</div>
+                <div class="timeline-responsibility">Practical CTF workflows</div>
+                <div class="timeline-responsibility">C|PENT certification</div>
+                <div class="timeline-responsibility">TryHackMe Cyber Security 101</div>
+                <div class="timeline-responsibility">OverTheWire Bandit (26 levels)</div>
+              </div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Currently Developing</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div class="timeline-responsibility">Junior penetration testing pathway</div>
+                <div class="timeline-responsibility">CEH preparation</div>
+                <div class="timeline-responsibility">Advanced web application security</div>
+                <div class="timeline-responsibility">Advanced exploitation</div>
+                <div class="timeline-responsibility">Post-exploitation techniques</div>
+                <div class="timeline-responsibility">Reverse engineering</div>
+                <div class="timeline-responsibility">Digital forensics (deeper)</div>
+                <div class="timeline-responsibility">OSINT investigation</div>
+                <div class="timeline-responsibility">Security automation</div>
+                <div class="timeline-responsibility">Programming from scratch</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Jagadeeswar Medidaraju</div>
+        <div class="footer-alias">DJ / DEEEEJAYY</div>
+        <div class="footer-tagline">Cybersecurity · Ethical Hacking · Digital Forensics · Security Engineering</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/DeeeeJayy" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="GitHub">GitHub</a>
+        <a href="https://linkedin.com/in/jagadeeswar-m" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://tryhackme.com/p/Deeeejayy" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="TryHackMe">TryHackMe</a>
+        <a href="https://medium.com/@deeeejayy" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Medium">Medium</a>
+        <a href="mailto:djeducationalmail@gmail.com" class="footer-link" aria-label="Email">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Jagadeeswar Medidaraju. All rights reserved.</div>
+      <div class="footer-credit">Designed by <span>Deeeejayy</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ======= NAV SCROLL =======
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// ======= MOBILE MENU =======
+const menuToggle = document.getElementById('menuToggle');
+const menuClose = document.getElementById('menuClose');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+function openMenu() {
+  mobileMenu.classList.add('open');
+  menuToggle.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+menuToggle.addEventListener('click', openMenu);
+menuClose.addEventListener('click', closeMenu);
+mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+// ======= ACTIVE NAV =======
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const observerOptions = { rootMargin: '-40% 0px -55% 0px', threshold: 0 };
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + id) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, observerOptions);
+
+sections.forEach(section => navObserver.observe(section));
+
+// ======= SCROLL REVEAL =======
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ======= MODALS =======
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(modal => {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+
+// ======= ACCORDION =======
+function toggleAccordion(header) {
+  const item = header.closest('.accordion-item');
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.accordion-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+  });
+  // Toggle current
+  if (!isOpen) {
+    item.classList.add('open');
+    header.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// ======= SMOOTH SCROLL =======
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
