@@ -297,6 +297,66 @@ p { line-height: 1.75; color: var(--text-secondary); }
 .btn-ghost:hover { gap: 10px; }
 .btn-ghost::after { content: '→'; transition: transform var(--transition); }
 
+/* ========= RESUME BUTTON ========= */
+.resume-dropdown { position: relative; display: inline-block; }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Trigger reuses the site's own button classes (nav-cta in the nav, btn btn-outline in the hero);
+   only the flex layout needed to place the caret is declared here. */
+.resume-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  cursor: pointer;
+  line-height: inherit;
+}
+
+.resume-caret { font-size: 0.7em; transition: transform var(--transition); }
+.resume-trigger[aria-expanded="true"] .resume-caret { transform: rotate(180deg); }
+
+.resume-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+  z-index: 300;
+}
+
+.resume-menu[hidden] { display: none; }
+
+.resume-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+
+.resume-menu-item:hover,
+.resume-menu-item:focus-visible {
+  color: var(--cyan);
+  background: var(--cyan-glow);
+}
+
 /* ========= NAVIGATION ========= */
 #navbar {
   position: fixed;
@@ -1178,6 +1238,48 @@ p { line-height: 1.75; color: var(--text-secondary); }
 
 .project-link:hover { opacity: 0.7; }
 
+/* ENTITY LOGO (project / community cards) */
+.entity-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.entity-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.entity-logo.logo-missing::before {
+  content: attr(data-fallback);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+}
+
+.project-nucleus-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  border: 1px solid rgba(56,189,248,0.2);
+  padding: 3px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 /* PROJECT MODAL */
 .modal-overlay {
   display: none;
@@ -1460,6 +1562,152 @@ p { line-height: 1.75; color: var(--text-secondary); }
 }
 .writeup-link:hover { opacity: 0.7; }
 
+/* ========= EVENTS ========= */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.event-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.event-role {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.event-title { font-size: 1.3rem; font-weight: 700; color: var(--text-primary); }
+
+.event-desc {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.event-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.event-highlight {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  line-height: 1.65;
+}
+
+.event-highlight::before {
+  content: '›';
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+.event-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.event-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.event-thumb {
+  padding: 0;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  cursor: zoom-in;
+  aspect-ratio: 4 / 3;
+  transition: border-color var(--transition);
+}
+
+.event-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition);
+}
+
+.event-thumb:hover { border-color: var(--border-hover); }
+.event-thumb:hover img { transform: scale(1.05); }
+.event-thumb:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+/* IMAGE LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: rgba(6,8,16,0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox[hidden] { display: none; }
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-hover);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.lightbox-close:hover { color: var(--text-primary); border-color: var(--border-hover); }
+
 /* ========= LEADERSHIP ========= */
 .leadership-grid {
   display: grid;
@@ -1490,6 +1738,27 @@ p { line-height: 1.75; color: var(--text-secondary); }
   gap: 8px;
 }
 .leadership-item::before { content: '›'; color: var(--cyan); flex-shrink: 0; }
+
+.leadership-motto {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+}
+
+.nucleus-block { margin-top: 16px; }
+
+.nucleus-block-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.nucleus-block p { font-size: 0.85rem; line-height: 1.7; }
 
 /* ========= ACHIEVEMENTS ========= */
 #achievements { background: var(--bg-secondary); }
@@ -1881,6 +2150,12 @@ footer {
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 /* ========= RESPONSIVE ========= */
+@media (max-width: 1080px) {
+  .nav-links { display: none; }
+  .nav-actions { display: none; }
+  .nav-mobile-toggle { display: flex; }
+}
+
 @media (max-width: 900px) {
   section { padding: 72px 0; }
   .container, .container-narrow { padding: 0 20px; }
@@ -1917,6 +2192,7 @@ footer {
   .presence-grid { grid-template-columns: 1fr; }
   .achievements-list { grid-template-columns: 1fr; }
   .research-grid { grid-template-columns: 1fr; }
+  .event-gallery { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
   .modal { padding: 24px 20px; }
   .timeline-item { grid-template-columns: 32px 1fr; }
 }
@@ -1943,10 +2219,22 @@ footer {
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#ctf">CTF</a></li>
+      <li><a href="#events">Events</a></li>
       <li><a href="#leadership">Leadership</a></li>
       <li><a href="#current">Now</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Contact</a>
+    <div class="nav-actions">
+      <div class="resume-dropdown" data-resume>
+        <button type="button" class="nav-cta resume-trigger" aria-haspopup="true" aria-expanded="false">
+          Resume <span class="resume-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="resume-menu" role="menu" hidden>
+          <a href="etc/Jagadeeswar%20Medidaraju_res.pdf" target="_blank" rel="noopener noreferrer" role="menuitem" class="resume-menu-item">View resume</a>
+          <a href="etc/Jagadeeswar%20Medidaraju_res.pdf" download="Jagadeeswar Medidaraju - Resume.pdf" role="menuitem" class="resume-menu-item">Download resume</a>
+        </div>
+      </div>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
     <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false" id="menuToggle">
       <span></span><span></span><span></span>
     </button>
@@ -1963,9 +2251,12 @@ footer {
   <a href="#projects" class="mobile-nav-link">Projects</a>
   <a href="#skills" class="mobile-nav-link">Skills</a>
   <a href="#ctf" class="mobile-nav-link">CTF</a>
+  <a href="#events" class="mobile-nav-link">Events</a>
   <a href="#leadership" class="mobile-nav-link">Leadership</a>
   <a href="#achievements" class="mobile-nav-link">Achievements</a>
   <a href="#current" class="mobile-nav-link">Current Work</a>
+  <a href="etc/Jagadeeswar%20Medidaraju_res.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Resume</a>
+  <a href="etc/Jagadeeswar%20Medidaraju_res.pdf" download="Jagadeeswar Medidaraju - Resume.pdf" class="mobile-nav-link">Download Resume</a>
   <a href="#contact" class="mobile-nav-link">Contact</a>
 </div>
 
@@ -2002,6 +2293,15 @@ footer {
       <a href="#projects" class="btn btn-primary">Explore Projects</a>
       <a href="#about" class="btn btn-outline">About Me</a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <div class="resume-dropdown" data-resume>
+        <button type="button" class="btn btn-outline resume-trigger" aria-haspopup="true" aria-expanded="false">
+          Resume <span class="resume-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="resume-menu" role="menu" hidden>
+          <a href="etc/Jagadeeswar%20Medidaraju_res.pdf" target="_blank" rel="noopener noreferrer" role="menuitem" class="resume-menu-item">View resume</a>
+          <a href="etc/Jagadeeswar%20Medidaraju_res.pdf" download="Jagadeeswar Medidaraju - Resume.pdf" role="menuitem" class="resume-menu-item">Download resume</a>
+        </div>
+      </div>
     </div>
     <div class="hero-links reveal reveal-delay-4">
       <a href="https://github.com/DeeeeJayy" target="_blank" rel="noopener noreferrer" class="hero-link" aria-label="GitHub profile">
@@ -2022,6 +2322,11 @@ footer {
       <a href="https://medium.com/@deeeejayy" target="_blank" rel="noopener noreferrer" class="hero-link" aria-label="Medium blog">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
         Medium
+      </a>
+      <span class="hero-link-divider" aria-hidden="true"></span>
+      <a href="https://discord.gg/75gKG8PxkC" target="_blank" rel="noopener noreferrer" class="hero-link" aria-label="Nucleus Discord community">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        Discord
       </a>
     </div>
     <div class="hero-stats reveal">
@@ -2513,21 +2818,32 @@ footer {
 
       <article class="card project-card reveal reveal-delay-2" onclick="openModal('proj-neutron')" role="button" tabindex="0" aria-label="View Neutron details" onkeypress="if(event.key==='Enter')openModal('proj-neutron')">
         <div class="project-header">
-          <div>
-            <div class="project-category">Discord Bot · Community Infrastructure</div>
-            <h3 class="project-name">Neutron</h3>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span class="entity-logo" data-fallback="NT">
+              <img src="etc/neutron.png" alt="Neutron community bot logo" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('logo-missing');this.remove();">
+            </span>
+            <div>
+              <div class="project-category">Discord Bot · Community Infrastructure · Automation</div>
+              <h3 class="project-name">Neutron | Nucleus Community Bot</h3>
+            </div>
           </div>
           <span class="badge badge-current">Active Development</span>
         </div>
-        <p class="project-desc">Custom Discord bot serving as the automation and interaction layer for the Nucleus cybersecurity community. Handles opportunity discovery, challenge systems, event management, and community automation. Integrates directly with the CyberSec Opportunity Crawler.</p>
+        <p class="project-desc">Neutron is a custom-built Discord bot and cybersecurity automation platform developed for the Nucleus community. It streamlines cybersecurity opportunity discovery, automates information distribution, and provides centralized tools for monitoring and managing community activities.</p>
         <div class="project-tech" role="list">
           <span class="project-tech-tag" role="listitem">Node.js</span>
-          <span class="project-tech-tag" role="listitem">Discord API</span>
-          <span class="project-tech-tag" role="listitem">SQLite</span>
+          <span class="project-tech-tag" role="listitem">Express</span>
+          <span class="project-tech-tag" role="listitem">EJS</span>
+          <span class="project-tech-tag" role="listitem">SQLite (WAL)</span>
+          <span class="project-tech-tag" role="listitem">Discord Bot</span>
           <span class="project-tech-tag" role="listitem">REST API</span>
+          <span class="project-tech-tag" role="listitem">Jest</span>
+          <span class="project-tech-tag" role="listitem">ESLint</span>
+          <span class="project-tech-tag" role="listitem">Docker</span>
         </div>
         <div class="project-footer">
-          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);">Opportunity discovery · Challenges · Automation</span>
+          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);">Ecosystem: Nucleus Cybersecurity Community</span>
+          <span class="project-nucleus-tag">Part of Nucleus</span>
         </div>
       </article>
 
@@ -2676,20 +2992,68 @@ footer {
     <div style="margin-bottom:24px;"><span class="badge badge-current">Active</span></div>
     <div class="modal-section"><div class="modal-section-title">Overview</div><p>A cybersecurity-focused community built around learning, practical experimentation, career opportunities, internships, jobs, and collaborative security activities. Founded and operated by Jagadeeswar Medidaraju.</p></div>
     <div class="modal-section"><div class="modal-section-title">Community Areas</div><div class="modal-tech"><span class="modal-tech-tag">Bug Bounty</span><span class="modal-tech-tag">CTFs</span><span class="modal-tech-tag">Web Security</span><span class="modal-tech-tag">Red Team</span><span class="modal-tech-tag">Blue Team</span><span class="modal-tech-tag">Digital Forensics</span><span class="modal-tech-tag">OSINT</span><span class="modal-tech-tag">Programming</span><span class="modal-tech-tag">AI</span><span class="modal-tech-tag">Cloud</span></div></div>
-    <div class="modal-section"><div class="modal-section-title">Community Principle</div><p style="font-family:var(--font-mono);color:var(--cyan);">LEARN WHATEVER MEANS NECESSARY · LEARN || COPY || STEAL</p></div>
+    <div class="modal-section"><div class="modal-section-title">Community Principle</div><p style="font-family:var(--font-mono);color:var(--cyan);">SURVIVE WHATEVER MEANS NECESSARY · LEARN || COPY || STEAL</p></div>
     <div class="modal-links"><a href="https://discord.gg/75gKG8PxkC" target="_blank" rel="noopener noreferrer" class="modal-link">↗ Join Nucleus Discord</a></div>
   </div>
 </div>
 
-<div id="proj-neutron" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Neutron" onclick="if(event.target===this)closeModal('proj-neutron')">
+<div id="proj-neutron" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Neutron | Nucleus Community Bot" onclick="if(event.target===this)closeModal('proj-neutron')">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('proj-neutron')" aria-label="Close">✕</button>
     <div class="modal-category">Discord Bot · Community Infrastructure · Automation</div>
-    <h2 class="modal-title">Neutron</h2>
-    <div style="margin-bottom:24px;"><span class="badge badge-current">Active Development</span></div>
-    <div class="modal-section"><div class="modal-section-title">Overview</div><p>Custom Discord bot serving as the automation and interaction layer for the Nucleus cybersecurity community. Designed to support cybersecurity learning, challenges, events, opportunity discovery, and community automation.</p></div>
-    <div class="modal-section"><div class="modal-section-title">Current Capabilities</div><div class="modal-tech"><span class="modal-tech-tag">/search</span><span class="modal-tech-tag">/jobs</span><span class="modal-tech-tag">/internships</span><span class="modal-tech-tag">/ctfs</span><span class="modal-tech-tag">/hackathons</span><span class="modal-tech-tag">/scan</span><span class="modal-tech-tag">/stats</span><span class="modal-tech-tag">/subscribe</span><span class="modal-tech-tag">/sources</span><span class="modal-tech-tag">/bot-status</span></div></div>
-    <div class="modal-section"><div class="modal-section-title">Roadmap</div><div class="modal-tech"><span class="modal-tech-tag">Challenge lifecycle system</span><span class="modal-tech-tag">AI-generated questions</span><span class="modal-tech-tag">User API-key support</span><span class="modal-tech-tag">Web dashboard</span><span class="modal-tech-tag">Event management</span><span class="modal-tech-tag">Community analytics</span></div></div>
+    <h2 class="modal-title">Neutron | Nucleus Community Bot</h2>
+    <div style="margin-bottom:24px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;"><span class="badge badge-current">Active Development</span><span class="project-nucleus-tag">Part of Nucleus</span></div>
+    <div class="modal-section"><div class="modal-section-title">Overview</div><p>Neutron is a custom-built Discord bot and cybersecurity automation platform developed for the Nucleus community. It streamlines cybersecurity opportunity discovery, automates information distribution, and provides centralized tools for monitoring and managing community activities.</p></div>
+    <div class="modal-section">
+      <div class="modal-section-title">Core Capabilities</div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+            <div class="accordion-title">Automated Opportunity Discovery</div>
+            <span class="accordion-chevron">▼</span>
+          </div>
+          <div class="accordion-body"><p>Collects cybersecurity jobs, internships, CTFs, hackathons, and events from multiple sources, reducing manual searching across platforms.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+            <div class="accordion-title">Processing and Deduplication</div>
+            <span class="accordion-chevron">▼</span>
+          </div>
+          <div class="accordion-body"><p>Classification, normalization, filtering, and duplicate detection to improve relevance and reduce repetitive announcements.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+            <div class="accordion-title">Discord Integration and Automation</div>
+            <span class="accordion-chevron">▼</span>
+          </div>
+          <div class="accordion-body"><p>Category-specific searches, manual scan triggers, scheduled scanning, subscription management, and automated distribution to relevant channels.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+            <div class="accordion-title">Web Dashboard and REST API</div>
+            <span class="accordion-chevron">▼</span>
+          </div>
+          <div class="accordion-body"><p>Browse and filter opportunities, review scan history and statistics, monitor source health, manage scanning operations.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+            <div class="accordion-title">Monitoring and Persistent Tracking</div>
+            <span class="accordion-chevron">▼</span>
+          </div>
+          <div class="accordion-body"><p>Opportunity records, scan history, and operational statistics.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+            <div class="accordion-title">Cybersecurity Quizzes and Challenges <span class="badge badge-inprogress">In Development</span></div>
+            <span class="accordion-chevron">▼</span>
+          </div>
+          <div class="accordion-body"><p>AI-assisted question generation, configurable topics and difficulty, timed participation, scoring, leaderboards.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section"><div class="modal-section-title">Why it matters</div><p>Cybersecurity opportunities are spread across many platforms, making them time-consuming to discover, organize, verify, and share. Neutron brings these into one workflow, helping members discover opportunities faster and reducing repetitive admin work.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Impact</div><p>Automates key parts of opportunity discovery and distribution for Nucleus, making jobs, internships, CTFs, and events more accessible through Discord. Its modular design is a base for more sources, better automation, and new learning and engagement features.</p></div>
+    <div class="modal-section"><div class="modal-section-title">Technologies</div><div class="modal-tech"><span class="modal-tech-tag">Node.js</span><span class="modal-tech-tag">Express</span><span class="modal-tech-tag">EJS</span><span class="modal-tech-tag">SQLite (WAL)</span><span class="modal-tech-tag">Discord Bot</span><span class="modal-tech-tag">REST API</span><span class="modal-tech-tag">Jest</span><span class="modal-tech-tag">ESLint</span><span class="modal-tech-tag">Docker</span></div></div>
   </div>
 </div>
 
@@ -3019,37 +3383,27 @@ footer {
   </div>
 </section>
 
+<!-- ======================== EVENTS ======================== -->
+<section id="events" aria-labelledby="events-title">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-id">11 · EVENTS &amp; WORKSHOPS</div>
+      <h2 class="section-title" id="events-title">Events I've Organized</h2>
+      <p class="section-subtitle">CTFs and hands-on security events I've organized, conducted, and mentored at.</p>
+    </div>
+    <div class="events-grid" id="eventsGrid"></div>
+  </div>
+</section>
+
 <!-- ======================== LEADERSHIP ======================== -->
 <section id="leadership" aria-labelledby="lead-title">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">11 · LEADERSHIP &amp; COMMUNITY</div>
+      <div class="section-id">12 · LEADERSHIP &amp; COMMUNITY</div>
       <h2 class="section-title" id="lead-title">Building &amp; Leading</h2>
       <p class="section-subtitle">Community founding, team coordination, technical mentorship, and event organization.</p>
     </div>
-    <div class="leadership-grid">
-      <div class="card leadership-card reveal">
-        <div class="leadership-role">Founder &amp; Developer</div>
-        <div class="leadership-title">Nucleus Cybersecurity Community</div>
-        <div class="leadership-desc">Founded and operate Nucleus, a cybersecurity-focused community built around practical learning, CTFs, career opportunities, internships, and collaborative security activities.</div>
-        <div class="leadership-items">
-          <div class="leadership-item">Community structure, roles, and member onboarding</div>
-          <div class="leadership-item">Cybersecurity learning channels and activities</div>
-          <div class="leadership-item">CTF events and knowledge sharing</div>
-          <div class="leadership-item">Opportunity discovery via integrated crawler system</div>
-        </div>
-      </div>
-      <div class="card leadership-card reveal reveal-delay-1">
-        <div class="leadership-role">Lead Developer</div>
-        <div class="leadership-title">Neutron Discord Bot</div>
-        <div class="leadership-desc">Designing and developing Neutron, the custom Discord bot and automation layer for the Nucleus community, shaping community workflows, cybersecurity features, and challenge systems.</div>
-        <div class="leadership-items">
-          <div class="leadership-item">Community workflow automation</div>
-          <div class="leadership-item">Opportunity discovery and distribution</div>
-          <div class="leadership-item">Challenge and quiz system development</div>
-          <div class="leadership-item">Event management infrastructure</div>
-        </div>
-      </div>
+    <div class="leadership-grid" id="leadershipGrid">
       <div class="card leadership-card reveal">
         <div class="leadership-role">Module Lead · CyART Internship</div>
         <div class="leadership-title">Dark-Web Intelligence — Module 2</div>
@@ -3086,7 +3440,7 @@ footer {
 <section id="achievements" aria-labelledby="ach-title">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">12 · ACHIEVEMENTS</div>
+      <div class="section-id">13 · ACHIEVEMENTS</div>
       <h2 class="section-title" id="ach-title">Verified Milestones</h2>
       <p class="section-subtitle">Only verifiable accomplishments, completed milestones, certifications, and significant responsibilities.</p>
     </div>
@@ -3155,7 +3509,7 @@ footer {
 <section id="research" aria-labelledby="research-title" style="background:var(--bg-secondary);">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">13 · RESEARCH &amp; TECHNICAL WRITING</div>
+      <div class="section-id">14 · RESEARCH &amp; TECHNICAL WRITING</div>
       <h2 class="section-title" id="research-title">Documentation &amp; Research</h2>
       <p class="section-subtitle">CTF writeups, Linux research, security concepts, and technical experiments published on Medium and GitHub.</p>
     </div>
@@ -3204,7 +3558,7 @@ footer {
 <section id="current" aria-labelledby="current-title">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">14 · CURRENT WORK</div>
+      <div class="section-id">15 · CURRENT WORK</div>
       <h2 class="section-title" id="current-title">What I'm Working On</h2>
       <p class="section-subtitle">Active projects, ongoing learning, and current responsibilities as of now.</p>
     </div>
@@ -3251,7 +3605,7 @@ footer {
 <section id="roadmap" aria-labelledby="roadmap-title">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">15 · FUTURE ROADMAP</div>
+      <div class="section-id">16 · FUTURE ROADMAP</div>
       <h2 class="section-title" id="roadmap-title">Where I'm Heading</h2>
       <p class="section-subtitle">Realistic areas of technical development based on current direction and goals.</p>
     </div>
@@ -3309,7 +3663,7 @@ footer {
 <section id="goals" aria-labelledby="goals-title" style="background:var(--bg-secondary);">
   <div class="container-narrow">
     <div class="section-header reveal">
-      <div class="section-id">16 · CAREER GOALS</div>
+      <div class="section-id">17 · CAREER GOALS</div>
       <h2 class="section-title" id="goals-title">Professional Direction</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;">
@@ -3341,7 +3695,7 @@ footer {
 <section id="philosophy" aria-labelledby="phil-title">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">17 · PERSONAL PHILOSOPHY</div>
+      <div class="section-id">18 · PERSONAL PHILOSOPHY</div>
       <h2 class="section-title" id="phil-title">How I Think &amp; Work</h2>
     </div>
     <div class="philosophy-tagline reveal">
@@ -3384,7 +3738,7 @@ footer {
 <section id="online" aria-labelledby="online-title">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">18 · ONLINE PRESENCE</div>
+      <div class="section-id">19 · ONLINE PRESENCE</div>
       <h2 class="section-title" id="online-title">Digital Footprint</h2>
       <p class="section-subtitle">Where to find my work, writing, and professional profile across the web.</p>
     </div>
@@ -3427,7 +3781,7 @@ footer {
 <section id="contact" aria-labelledby="contact-title" style="background:var(--bg-secondary);">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">19 · CONTACT</div>
+      <div class="section-id">20 · CONTACT</div>
       <h2 class="section-title" id="contact-title">Get In Touch</h2>
       <p class="section-subtitle">Available for relevant cybersecurity opportunities, internships, collaborations, and technical projects.</p>
     </div>
@@ -3486,7 +3840,7 @@ footer {
 <section id="appendix" aria-labelledby="appendix-title">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-id">20 · APPENDIX</div>
+      <div class="section-id">21 · APPENDIX</div>
       <h2 class="section-title" id="appendix-title">Technical Archive</h2>
       <p class="section-subtitle">Complete reference inventory of projects, tools, certifications, CTF history, and learning roadmap.</p>
     </div>
@@ -3686,7 +4040,251 @@ footer {
   </div>
 </footer>
 
+<!-- ======================== IMAGE LIGHTBOX ======================== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo" hidden>
+  <button type="button" class="lightbox-close" aria-label="Close enlarged photo">✕</button>
+  <img class="lightbox-img" id="lightboxImg" alt="">
+</div>
+
 <script>
+// ======= EVENTS (data-driven — add a new event by adding one object below) =======
+const events = [
+  {
+    title: "Crypt Clash — CTF",
+    date: "TECHASTRA 2026",
+    role: "Organizer & Technical Lead",
+    description: "An in-house Capture The Flag event I organized and conducted professionally as part of TECHASTRA 2026. With AI assistance disallowed by the rules, the challenges genuinely tested participants' real skills. Alongside running the event, I mentored beginners through the challenges and shared the book I used to prepare for my CPENT exam with participants who wanted to go deeper.",
+    highlights: [
+      "Organized and conducted the event professionally, end to end.",
+      "Enforced a no-AI rule so the event truly tested real skills, not shortcuts.",
+      "Helped beginners learn new things — and picked up a few things myself along the way.",
+      "Mentoring & knowledge sharing: shared the book I used for my CPENT exam ([book title]) with participants who were eager to solve the challenges and go deeper."
+    ],
+    tags: ["CTF", "Event Organization", "Mentoring", "Offensive Security", "CPENT"],
+    images: [
+      { src: "etc/20261009_114223AMByGPSMapCamera.jpg.jpeg", alt: "Crypt Clash CTF event photo 1" },
+      { src: "etc/20261009_123712PMByGPSMapCamera.jpg.jpeg", alt: "Crypt Clash CTF event photo 2" },
+      { src: "etc/20261009_123818PMByGPSMapCamera.jpg.jpeg", alt: "Crypt Clash CTF event photo 3" },
+      { src: "etc/WhatsApp%20Image%202026-10-09%20at%2010.07.43%20PM.jpeg", alt: "Crypt Clash CTF event photo 4" },
+      { src: "etc/WhatsApp%20Image%202026-10-09%20at%2010.07.44%20PM.jpeg", alt: "Crypt Clash CTF event photo 5" }
+    ]
+  }
+];
+
+const esc = (value) => String(value).replace(/[&<>"]/g, (ch) => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'
+}[ch]));
+
+function renderEvents() {
+  const grid = document.getElementById('eventsGrid');
+  if (!grid) return;
+  grid.innerHTML = events.map((event, index) => {
+    const highlights = (event.highlights || [])
+      .map((item) => `<div class="event-highlight">${esc(item)}</div>`).join('');
+    const tags = (event.tags || [])
+      .map((tag) => `<span class="event-tag">${esc(tag)}</span>`).join('');
+    const images = (event.images || [])
+      .map((image) => `
+        <button type="button" class="event-thumb" onclick="openLightbox(this)"
+                data-src="${esc(image.src)}" data-alt="${esc(image.alt)}"
+                aria-label="View larger: ${esc(image.alt)}">
+          <img src="${esc(image.src)}" alt="${esc(image.alt)}" loading="lazy" decoding="async">
+        </button>`).join('');
+
+    return `
+      <article class="card event-card reveal${index % 2 ? ' reveal-delay-1' : ''}">
+        <div class="event-header">
+          <div>
+            <div class="event-role">${esc(event.role)}</div>
+            <h3 class="event-title">${esc(event.title)}</h3>
+          </div>
+          <span class="badge badge-completed">${esc(event.date)}</span>
+        </div>
+        <p class="event-desc">${esc(event.description)}</p>
+        ${highlights ? `<div class="event-highlights">${highlights}</div>` : ''}
+        ${tags ? `<div class="event-tags">${tags}</div>` : ''}
+        ${images ? `<div class="event-gallery" role="group" aria-label="Event photos">${images}</div>` : ''}
+      </article>`;
+  }).join('');
+}
+
+renderEvents();
+
+// ======= NUCLEUS COMMUNITY (data-driven) =======
+const nucleus = {
+  role: "Founder & Community Lead",
+  title: "Nucleus | Cybersecurity Community",
+  summary: "Nucleus is a cybersecurity-focused community that brings learners, aspiring security professionals, and enthusiasts together to learn, collaborate, and grow through practical experience.",
+  motto: "SURVIVE WHATEVER MEANS NECESSARY",
+  image: "etc/nucleus.png",
+  imageAlt: "Nucleus cybersecurity community logo",
+  imageFallback: "NU",
+  offers: [
+    { label: "Hands-on Learning", text: "CTF challenges, cybersecurity quizzes, practical learning." },
+    { label: "Career Opportunities", text: "curated cybersecurity jobs, internships, entry-level openings." },
+    { label: "Events & Competitions", text: "updates on upcoming CTFs, cybersecurity events, community activities." },
+    { label: "Knowledge Sharing", text: "web security, bug bounty, digital forensics, reverse engineering, OSINT, red teaming, blue teaming, and other domains." },
+    { label: "Community Engagement", text: "interactive activities, leaderboards, planned giveaways." }
+  ],
+  automation: "Nucleus integrates Neutron, a custom Discord bot I developed for interactive cybersecurity quizzes and community events. The workflow also includes automated scanning and organized sharing of opportunities (CTFs, internships, jobs, events).",
+  myRole: "As founder and community lead, I oversee community development, organize learning initiatives and CTF activities, develop automation tools, and explore ways to make cybersecurity learning more accessible and engaging.",
+  mission: "Build a collaborative cybersecurity ecosystem where people can learn, practice, share opportunities, and grow together."
+};
+
+function renderNucleus() {
+  const grid = document.getElementById('leadershipGrid');
+  if (!grid) return;
+  const offers = nucleus.offers
+    .map((offer) => `<div class="leadership-item"><span><strong style="color:var(--text-primary);">${esc(offer.label)}:</strong> ${esc(offer.text)}</span></div>`)
+    .join('');
+  grid.insertAdjacentHTML('afterbegin', `
+    <article class="card leadership-card reveal">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
+        <span class="entity-logo" data-fallback="${esc(nucleus.imageFallback)}">
+          <img src="${esc(nucleus.image)}" alt="${esc(nucleus.imageAlt)}" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('logo-missing');this.remove();">
+        </span>
+        <div>
+          <div class="leadership-role">${esc(nucleus.role)}</div>
+          <div class="leadership-title">${esc(nucleus.title)}</div>
+        </div>
+      </div>
+      <div class="leadership-desc">${esc(nucleus.summary)}</div>
+      <div class="leadership-motto">"${esc(nucleus.motto)}"</div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+            <div class="accordion-title">What Nucleus Offers</div>
+            <span class="accordion-chevron">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="leadership-items">${offers}</div>
+            <div class="nucleus-block">
+              <div class="nucleus-block-title">Automation</div>
+              <p>${esc(nucleus.automation)}</p>
+            </div>
+            <div class="nucleus-block">
+              <div class="nucleus-block-title">My Role</div>
+              <p>${esc(nucleus.myRole)}</p>
+            </div>
+            <div class="nucleus-block">
+              <div class="nucleus-block-title">Mission</div>
+              <p>${esc(nucleus.mission)}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  `);
+}
+
+renderNucleus();
+
+// ======= NEUTRON COMMUNITY CARD (data-driven) =======
+const neutron = {
+  role: "Lead Developer",
+  title: "Neutron | Nucleus Community Bot",
+  summary: "Neutron is a custom-built Discord bot and cybersecurity automation platform developed for the Nucleus community. It streamlines cybersecurity opportunity discovery, automates information distribution, and provides centralized tools for monitoring and managing community activities.",
+  image: "etc/neutron.png",
+  imageAlt: "Neutron community bot logo",
+  imageFallback: "NT",
+  capabilities: [
+    { label: "Automated Opportunity Discovery", text: "collects cybersecurity jobs, internships, CTFs, hackathons, and events from multiple sources, reducing manual searching across platforms." },
+    { label: "Processing and Deduplication", text: "classification, normalization, filtering, and duplicate detection to improve relevance and reduce repetitive announcements." },
+    { label: "Discord Integration and Automation", text: "category-specific searches, manual scan triggers, scheduled scanning, subscription management, and automated distribution to relevant channels." },
+    { label: "Web Dashboard and REST API", text: "browse and filter opportunities, review scan history and statistics, monitor source health, manage scanning operations." },
+    { label: "Monitoring and Persistent Tracking", text: "opportunity records, scan history, and operational statistics." },
+    { label: "Cybersecurity Quizzes and Challenges", text: "AI-assisted question generation, configurable topics and difficulty, timed participation, scoring, leaderboards.", inDevelopment: true }
+  ]
+};
+
+function renderNeutron() {
+  const grid = document.getElementById('leadershipGrid');
+  if (!grid) return;
+  const capabilities = neutron.capabilities
+    .map((cap) => `<div class="leadership-item"><span><strong style="color:var(--text-primary);">${esc(cap.label)}${cap.inDevelopment ? ' <span class="badge badge-inprogress">In Development</span>' : ''}:</strong> ${esc(cap.text)}</span></div>`)
+    .join('');
+  const html = `
+    <article class="card leadership-card reveal reveal-delay-1">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
+        <span class="entity-logo" data-fallback="${esc(neutron.imageFallback)}">
+          <img src="${esc(neutron.image)}" alt="${esc(neutron.imageAlt)}" width="48" height="48" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('logo-missing');this.remove();">
+        </span>
+        <div>
+          <div class="leadership-role">${esc(neutron.role)}</div>
+          <div class="leadership-title">${esc(neutron.title)}</div>
+        </div>
+      </div>
+      <div class="leadership-desc">${esc(neutron.summary)}</div>
+      <div class="project-nucleus-tag" style="display:inline-block;margin-bottom:16px;">Part of Nucleus</div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" aria-expanded="false" onkeypress="if(event.key==='Enter'||event.key===' ')toggleAccordion(this)">
+            <div class="accordion-title">Core Capabilities</div>
+            <span class="accordion-chevron">▼</span>
+          </div>
+          <div class="accordion-body">
+            <div class="leadership-items">${capabilities}</div>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  const nucleusCard = grid.querySelector('.leadership-card');
+  if (nucleusCard) {
+    nucleusCard.insertAdjacentHTML('afterend', html);
+  } else {
+    grid.insertAdjacentHTML('afterbegin', html);
+  }
+}
+
+renderNeutron();
+
+// ======= IMAGE LIGHTBOX =======
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+
+function openLightbox(thumb) {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = thumb.getAttribute('data-src') || '';
+  lightboxImg.alt = thumb.getAttribute('data-alt') || '';
+  lightbox.hidden = false;
+  document.body.style.overflow = 'hidden';
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  if (closeBtn) closeBtn.focus();
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.hidden = true;
+  lightboxImg.src = '';
+  lightboxImg.alt = '';
+  document.body.style.overflow = '';
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.closest('.lightbox-close')) closeLightbox();
+  });
+}
+
+// ======= RESUME DROPDOWN =======
+document.querySelectorAll('[data-resume]').forEach((dropdown) => {
+  const trigger = dropdown.querySelector('.resume-trigger');
+  const menu = dropdown.querySelector('.resume-menu');
+  if (!trigger || !menu) return;
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+    menu.hidden = isOpen;
+  });
+  document.addEventListener('click', () => {
+    if (trigger.getAttribute('aria-expanded') === 'true') {
+      trigger.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+    }
+  });
+});
+
 // ======= NAV SCROLL =======
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -3776,6 +4374,15 @@ document.addEventListener('keydown', (e) => {
     document.querySelectorAll('.modal-overlay.open').forEach(modal => {
       modal.classList.remove('open');
       document.body.style.overflow = '';
+    });
+    closeLightbox();
+    document.querySelectorAll('[data-resume]').forEach(dropdown => {
+      const trigger = dropdown.querySelector('.resume-trigger');
+      const menu = dropdown.querySelector('.resume-menu');
+      if (trigger && menu) {
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
     });
   }
 });
